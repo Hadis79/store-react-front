@@ -1,37 +1,76 @@
-.container {
-    display: flex;
-    flex-direction: column;
-}
-
-.top-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #816263;
-    padding: 18px;
-}
-
-.left-side {
-    display: flex;
-    flex-direction: row;
-    margin-left: 8%;
-}
-
-.right-side {
-    display: flex;
-    flex-direction: row;
-    margin-right: 8%;
-}
-
-.create-account {
-    margin-left: 24px;
-}
-
-.total-price {
-    margin-right: 24px;
-}
-
-.top-header a {
-    color: aliceblue;
-    text-decoration: none;
-}
+    /* top header */
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .top-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #816263;
+        padding: 18px;
+    }
+    
+    .left-side {
+        display: flex;
+        flex-direction: row;
+        margin-left: 8%;
+    }
+    
+    .right-side {
+        display: flex;
+        flex-direction: row;
+        margin-right: 8%;
+    }
+    
+    .create-account {
+        margin-left: 24px;
+    }
+    
+    .total-price {
+        margin-right: 24px;
+    }
+    
+    .top-header a {
+        color: aliceblue;
+        text-decoration: none;
+    }
+    /* end top header */
+    /* navbar */
+    
+    .main-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2% 8%;
+    }
+    
+    .logo h1 span {
+        border: 2px solid #816263;
+        color: #816263;
+        padding: 4px 12px;
+        border-radius: 50%;
+    }
+    
+    ul.header-items {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        padding: 10px 0;
+    }
+    
+    li.header-item a {
+        margin-left: 2rem;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        padding: 10px 12px;
+    }
+    
+    li.header-item a:hover {
+        background-color: transparent;
+        border: 1px solid #816263;
+        color: #816263;
+        transition: all .5s
+    }

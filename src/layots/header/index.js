@@ -29,24 +29,37 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="main_header">
-        <ul className="header_items">
-          <li className="header_item">
-            <Link to="home">Home</Link>
-          </li>
-          <li className="header_item">
-            <Link to="home">Men</Link>
-          </li>
-          <li className="header_item">
-            <Link to="home">Women</Link>
-          </li>
-          <li className="header_item">
-            <Link to="home">Jewelery</Link>
-          </li>
-          <li className="header_item">
-            <Link to="home">Electronic</Link>
-          </li>
-        </ul>
+      <div className="main-header">
+        <div class="logo">
+          <h1>
+            
+              <span>E</span> -Shop
+           
+          </h1>
+        </div>
+        <div className="navbar">
+          {" "}
+          <ul className="header-items">
+            <li className="header-item">
+              <Link to="home">Home</Link>
+            </li>
+            <li className="header-item">
+              <Link to="home">Men</Link>
+            </li>
+            <li className="header-item">
+              <Link to="home">Women</Link>
+            </li>
+            <li className="header-item">
+              <Link to="home">Jewelery</Link>
+            </li>
+            <li className="header-item">
+              <Link to="home">Electronic</Link>
+            </li>
+            <li className="header-item">
+              <Link to="home">Contact</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
