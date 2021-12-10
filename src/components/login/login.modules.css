@@ -1,0 +1,118 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+/* addressbar */
+
+.addressbar {
+    display: flex;
+    /* background-color: #fff; */
+    justify-content: space-between;
+    padding: 2% 12%;
+}
+
+.addressbar .title {
+    font-size: 16px;
+}
+
+.addressbar a {
+    text-decoration: none;
+    color: #816381;
+}
+
+
+/* end addressbar */
+
+.main-content-login {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 8% 8%;
+    column-gap: 20px;
+}
+
+.column-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-1 h2,
+.column-2 h2 {
+    margin-bottom: 20px;
+}
+
+.column-1 p {
+    color: rgba(73, 73, 69, 0.274);
+    margin-bottom: 40px;
+}
+
+.create-account-link a {
+    text-decoration: none;
+    border: 1px solid #816263;
+    padding: 10px;
+    color: beige;
+    background-color: #816263;
+    transition: all .5s ease-in-out;
+}
+
+.create-account-link a:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.column-2 p {
+    margin-top: 20px;
+    color: rgba(73, 73, 69, 0.274);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.form-item {
+    margin-top: 4%;
+    width: 100%;
+}
+
+.form-item input:focus {
+    border: 2px solid rgba(66, 66, 66, 0.555);
+    outline: rgba(66, 66, 66, 0.555);
+}
+
+.form-item label {
+    color: rgb(87, 85, 85);
+}
+
+.inputs input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-item.btn-login {
+    display: flex;
+    vertical-align: middle;
+}
+
+.form-item.btn-login p {
+    color: rgb(94, 94, 221);
+}
+
+.form-item.btn-login button {
+    margin-left: 2%;
+    padding: 12px;
+    background-color: #816263;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: all .5s ease-in-out;
+}
+
+.form-item.btn-login button:hover {
+    background-color: black;
+    color: #fff;
+}

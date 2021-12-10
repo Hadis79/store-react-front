@@ -1,0 +1,16 @@
+.products-container-grid {
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+
+.title {
+    color: #816263;
+    text-align: center;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10%;
+    text-align: center;
+}

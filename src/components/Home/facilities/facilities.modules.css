@@ -1,0 +1,44 @@
+.main-content {
+    padding: 0px 10%;
+}
+
+.facilities-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8%;
+    padding: 1% 10%;
+    border-top: 1px solid #81626367;
+    border-bottom: 1px solid #81626367;
+    color: #816263;
+}
+
+.border-right {
+    border-right: 1px solid #81626367;
+}
+
+.contact {
+    display: flex;
+    font-size: 20px;
+}
+
+.contact span i {
+    color: rgb(86, 83, 250);
+    padding: 22%;
+    font-size: 28px;
+}
+
+.shipping {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.shipping span i {
+    color: black;
+    font-size: 28px;
+    padding: 0px 10px;
+}
+
+.order {
+    text-align: center;
+}

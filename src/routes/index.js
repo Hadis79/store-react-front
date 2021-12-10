@@ -7,17 +7,23 @@ import MenClothing from "../components/Categories/MenClothing";
 import WomanClothing from "../components/Categories/WomanClothing";
 import { BrowserRouter } from "react-router-dom";
 import { route } from "./route";
+import Login from "../components/login";
+import CreateAccount from "../components/createAccount";
 
 const Index = () => {
     console.log('/path');
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/createaccount" element={<CreateAccount />} /> 
+
         <Route path="/men" element={<MenClothing />} />
         <Route path="/woman" element={<WomanClothing />} />
         <Route path="/jewelery" element={<Jewelery />} />
         <Route path="/electronics" element={<Electronics />} /> 
+        
         
       </Routes>
     </BrowserRouter>

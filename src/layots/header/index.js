@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import "./style.css";
+import "./header.modules.css";
 const Header = () => {
   return (
     <div className="container">
       <div className="top-header">
         <div className="left-side">
           <div className="login">
-            <Link to="home">
+            <Link to="login">
               <i class="fa fa-user"></i> logIn
             </Link>
           </div>
           <div className="create-account">
-            <Link to="home">
+            <Link to="createaccount">
               <i class="fa fa-lock"></i> create an account
             </Link>
           </div>
@@ -41,7 +41,7 @@ const Header = () => {
           {" "}
           <ul className="header-items">
             <li className="header-item">
-              <Link to="home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="header-item">
               <Link to="home">Men</Link>
@@ -55,9 +55,7 @@ const Header = () => {
             <li className="header-item">
               <Link to="home">Electronic</Link>
             </li>
-            <li className="header-item">
-              <Link to="home">Contact</Link>
-            </li>
+           
           </ul>
         </div>
       </div>

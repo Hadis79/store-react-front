@@ -1,0 +1,53 @@
+.main-content-createAccount {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2% 8%;
+    column-gap: 20px;
+}
+
+form span a {
+    text-decoration: none;
+    color: #816263;
+}
+
+.column-1 {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.column-1 h2,
+.column-2 h2 {
+    margin-bottom: 20px;
+}
+
+.inputs {
+    list-style: none;
+}
+
+.form-item {
+    list-style: none;
+}
+
+.form-item label {
+    color: #816263;
+}
+
+.form-item.btn-createAccount button {
+    background-color: #816263;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: all .5s ease-in-out;
+    padding: 10px 40px;
+}
+
+.form-item.btn-createAccount button:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.form-item li input:focus {
+    border: 2px solid rgba(66, 66, 66, 0.555);
+    outline: rgba(66, 66, 66, 0.555);
+}

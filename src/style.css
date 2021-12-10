@@ -6,16 +6,23 @@
 
 @font-face {
     font-family: 'Lato-Regular';
-    src: url(./fonts/Lato-Regular.ttf)format('truetype');
+    src: local('Lato-Regular'), url('./fonts/Lato-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'PlayfairDisplay-Regular';
-    src: url(./fonts/PlayfairDisplay-Regular.ttf)format('truetype');
+    src: local('PlayfairDisplay-Regular'), url('./fonts/PlayfairDisplay-Regular.ttf') format('truetype');
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    font-size: 'Lato-Regular';
+    font-family: 'Lato-Regular';
+    background-color: #f8f8f8;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
