@@ -1,28 +1,28 @@
+import "./latestProducts.modules.css";
 
-import './latestProducts.modules.css'
-
-const LatestProducts = () => {
+const LatestProducts = ({ lastData }) => {
+  console.log("3 latetst Products", lastData);
   return (
-    <div className="products-container-grid">
-      <div className="title">Latest Products</div>
+    <section className="products-container-grid">
+      <h1 >Latest Products</h1>
       <div className="products-grid">
-        <div className="column-1">
-          <div className="row-1">Hi</div>
-          <div className="row-2">9</div>
-          <div className="row-3">Hi</div>
-        </div>
-        <div className="column-2">
-          <div className="row-1">Hi</div>
-          <div className="row-2">Hi</div>
-          <div className="row-3">Hi</div>
-        </div>{" "}
-        <div className="column-3">
-          <div className="row-1">Hi</div>
-          <div className="row-2">Hi</div>
-          <div className="row-3">Hi</div>
-        </div>
+        {lastData.map((data) => {
+          return (
+            <div className="column">
+              <div className="row">
+                <div className="img">
+                  <img src={data.image} alt="" />
+                </div>
+                <div className="title-product">
+                <p>{data.title}</p>
+                </div>
+                <p className="price"> <i class="fa fa-shopping-cart"></i> {`$${data.price}`}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </div>
+    </section>
   );
 };
 

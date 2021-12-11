@@ -3,9 +3,8 @@ import "./footer.modules.css";
 const Footer = () => {
   return (
     <div className="footer-container">
-      
       <div className=" column-1">
-        <div className="row-1 title">Help</div>
+        <div className="footer-title">Help</div>
         <div className="row-2">
           <Link to="/">Men</Link>
         </div>
@@ -20,7 +19,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=" column-2">
-        <div className="row-1 title">Account</div>
+        <div className="footer-title">Account</div>
         <div className="row-2">
           <Link to="/">Login</Link>
         </div>

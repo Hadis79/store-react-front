@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Footer from "../../layots/footer";
-import Header from "../../layots/header";
+import Footer from "../../commen/footer";
+import Header from "../../commen/header";
 import "./createAccount.modules.css";
 const CreateAccount = () => {
   return (

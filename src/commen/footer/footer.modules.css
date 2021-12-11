@@ -8,10 +8,10 @@
     width: 100%;
 }
 
-.title {
+.footer-title {
     display: flex;
     justify-content: start;
-    color: #fff;
+    color: #4e4a4b5e;
     font-size: 20px;
 }
 
