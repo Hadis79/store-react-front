@@ -5,8 +5,9 @@ import FeaturedCollections from "./featuredCollection";
 import HomeBanner from "./homeBanner";
 import LatestProducts from "./LatestProducts";
 import { useEffect, useState } from "react";
+import Spinner from "../../utils/loader";
 
-const HomePage = ({ data }) => {
+const HomePage = ({ data ,loading}) => {
   const [latestProducts, setLatestProducts] = useState([]);
   const [popular,setPopular]=useState([])
   useEffect(() => {
@@ -24,8 +25,8 @@ const HomePage = ({ data }) => {
       <Header />
       <HomeBanner />
       <Facilities />
-      <LatestProducts lastData={latestProducts} />
-      <FeaturedCollections popularData={popular}/>
+     {loading?<Spinner/>: <LatestProducts lastData={latestProducts} />}
+      {loading?<Spinner/>:<FeaturedCollections popularData={popular}/>}
       <Footer />
     </>
   );
