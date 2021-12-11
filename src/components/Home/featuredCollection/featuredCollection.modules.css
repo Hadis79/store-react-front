@@ -1,0 +1,36 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #836263;
+    font-family: 'PlayfairDisplay-Regular';
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.slider-container img {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    object-fit: cover;
+}
+
+.slider-container p {
+    align-items: center;
+    text-align: center;
+    margin-right: 66px;
+    margin-top: 20px;
+    color: #333;
+}

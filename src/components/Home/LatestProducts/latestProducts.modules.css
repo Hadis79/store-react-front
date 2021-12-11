@@ -27,10 +27,32 @@
     width: 100%;
     background-color: rgba(143, 143, 135, 0.205);
     padding: 20px;
+    position: relative;
 }
 
 .column img {
     max-width: 80%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.mask {
+    display: none;
+}
+
+.column:hover .mask {
+    position: absolute;
+    display: block;
+    top: 42%;
+    left: 32%;
+    border: 1px solid rgba(202, 200, 200, 0.658);
+    padding: 3px;
+    background-color: rgba(202, 200, 200, 0.658);
+}
+
+.mask a {
+    text-decoration: none;
+    color: #000;
 }
 
 .title-product {

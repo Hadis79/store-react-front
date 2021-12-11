@@ -2,42 +2,36 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./featuredCollection.modules.css";
 
-export default class SimpleSlider extends Component {
-  render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
-      cssEase: "linear",
-    };
-    return (
-      <div>
-        <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
-      </div>
-    );
-  }
-}
+const SimpleSlider = ({ data }) => {
+  console.log("popularData", data);
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+  };
+  return (
+    <section>
+      <Slider {...settings}>
+        {data.map((item) => {
+          return (
+            <div className="slider-container">
+              <img src={item.image} alt="image" />
+              <p>
+                <i class="fa fa-shopping-cart"></i> {`$${item.price}`}
+              </p>
+            </div>
+          );
+        })}
+      </Slider>
+    </section>
+  );
+};
+
+export default SimpleSlider;

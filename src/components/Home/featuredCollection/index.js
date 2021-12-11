@@ -1,14 +1,14 @@
 import SimpleSlider from "./simpleSlider";
 import './featuredCollection.modules.css'
 
-const FeaturedCollections = () => {
+const FeaturedCollections = ({popularData}) => {
   return (
-    <div className="main-container">
-      <div className="title">FEATURED COLLECTION</div>
+    <section className="main-container">
+      <h1 >POPULAR COLLECTION</h1>
       <div className="slider">
-        <SimpleSlider />
+        <SimpleSlider data={popularData} />
       </div>
-    </div>
+    </section>
   );
 };
 

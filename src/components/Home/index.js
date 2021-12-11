@@ -8,10 +8,15 @@ import { useEffect, useState } from "react";
 
 const HomePage = ({ data }) => {
   const [latestProducts, setLatestProducts] = useState([]);
-  //3 last products
+  const [popular,setPopular]=useState([])
   useEffect(() => {
+    
+    //3 last products
     const threeLastProduct = data.slice(17, 20);
     setLatestProducts(threeLastProduct);
+    //most popular
+    const popular=data.slice(0,5)
+    setPopular(popular)
   }, [data]);
   console.log(latestProducts);
   return (
@@ -20,7 +25,7 @@ const HomePage = ({ data }) => {
       <HomeBanner />
       <Facilities />
       <LatestProducts lastData={latestProducts} />
-      <FeaturedCollections />
+      <FeaturedCollections popularData={popular}/>
       <Footer />
     </>
   );

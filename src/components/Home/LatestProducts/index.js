@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./latestProducts.modules.css";
 
 const LatestProducts = ({ lastData }) => {
@@ -13,6 +14,9 @@ const LatestProducts = ({ lastData }) => {
                 <div className="img">
                   <img src={data.image} alt="" />
                 </div>
+              <div className="mask">
+                <Link to='/'>Quick View</Link>
+              </div>
                 <div className="title-product">
                 <p>{data.title}</p>
                 </div>
