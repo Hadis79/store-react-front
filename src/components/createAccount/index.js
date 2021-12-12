@@ -1,52 +1,32 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import SimpleReactValidator from "simple-react-validator";
 import Footer from "../../commen/footer";
 import Header from "../../commen/header";
+import { InitContext } from "../../context/InitContext";
 import { registerUserApi } from "../../services/user";
 import "./createAccount.modules.css";
 const CreateAccount = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
-  const [number, setNumber] = useState(null);
-  const [userName, setUserName] = useState(null);
-  const [, forceUpdate] = useState();
-  const validator = useRef(
-    new SimpleReactValidator({
-      messages: {
-        required: "this is require",
-        email: "your email is invalid",
-        min: "your password should be more than 5 ",
-      },
-      element: message => <div style={{ color: "red" }}>{message}</div>
-
-    })
-  );
-  //registerHandler
-  const registerHandler = async (e) => {
-    console.log('form submitted');
-    e.preventDefault();
-    const user = {
-      firstName,
-      lastName,
-      email,
-      password,
-      number,
-      userName,
-    };
-    try {
-      if (validator.current.allValid()) {
-        const register = await registerUserApi();
-      } else {
-        validator.current.showMessages();
-        forceUpdate(1);
-      }
-    } catch (error) {}
-  };
+  const registerContext = useContext(InitContext);
+  const {
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    email,
+    setEmail,
+    userName,
+    setUserName,
+    password,
+    setPassword,
+    confirmPassword,
+    setConfirmPassword,
+    number,
+    setNumber,
+    registerHandler,
+    validator
+  } = registerContext;
   return (
     <>
       <div className="createaccount-container">
@@ -149,8 +129,11 @@ const CreateAccount = () => {
                       }}
                     />
                   </li>
-                  {validator.current.message("userName", userName, "required|min:5")}
-
+                  {validator.current.message(
+                    "userName",
+                    userName,
+                    "required|min:5"
+                  )}
                 </ul>
                 <ul className="form-item">
                   <li>
@@ -167,7 +150,11 @@ const CreateAccount = () => {
                       }}
                     />
                   </li>
-                  {validator.current.message("Password", password, "required|min:5")}
+                  {validator.current.message(
+                    "Password",
+                    password,
+                    "required|min:5"
+                  )}
                 </ul>
                 <ul className="form-item">
                   <li>
