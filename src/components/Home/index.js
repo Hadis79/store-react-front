@@ -7,17 +7,16 @@ import LatestProducts from "./LatestProducts";
 import { useEffect, useState } from "react";
 import Spinner from "../../utils/loader";
 
-const HomePage = ({ data ,loading}) => {
+const HomePage = ({ data, loading }) => {
   const [latestProducts, setLatestProducts] = useState([]);
-  const [popular,setPopular]=useState([])
+  const [popular, setPopular] = useState([]);
   useEffect(() => {
-    
     //3 last products
     const threeLastProduct = data.slice(17, 20);
     setLatestProducts(threeLastProduct);
     //most popular
-    const popular=data.slice(0,5)
-    setPopular(popular)
+    const popular = data.slice(0, 5);
+    setPopular(popular);
   }, [data]);
   console.log(latestProducts);
   return (
@@ -25,8 +24,10 @@ const HomePage = ({ data ,loading}) => {
       <Header />
       <HomeBanner />
       <Facilities />
-     {loading?<Spinner/>: <LatestProducts lastData={latestProducts} />}
-      {loading?<Spinner/>:<FeaturedCollections popularData={popular}/>}
+
+      {loading ? <Spinner /> : <LatestProducts lastData={latestProducts} />}
+
+      {loading ? <Spinner /> : <FeaturedCollections popularData={popular} />}
       <Footer />
     </>
   );

@@ -11,8 +11,10 @@
 .footer-title {
     display: flex;
     justify-content: start;
-    color: #4e4a4b5e;
+    color: #816362;
     font-size: 20px;
+    border-bottom: 1px solid #fff;
+    line-height: 25px;
 }
 
 .content {
