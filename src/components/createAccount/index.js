@@ -6,6 +6,7 @@ import Footer from "../../commen/footer";
 import Header from "../../commen/header";
 import { InitContext } from "../../context/InitContext";
 import { registerUserApi } from "../../services/user";
+import { Modal, modal } from "../../utils/modal";
 import "./createAccount.modules.css";
 const CreateAccount = () => {
   const registerContext = useContext(InitContext);
@@ -22,10 +23,14 @@ const CreateAccount = () => {
     setPassword,
     confirmPassword,
     setConfirmPassword,
+    address,
+    setAddress,
     number,
     setNumber,
     registerHandler,
-    validator
+    validator,
+    showModal,
+    setShowModal,
   } = registerContext;
   return (
     <>
@@ -45,7 +50,13 @@ const CreateAccount = () => {
             </span>
           </div>
         </div>
-
+        {showModal && (
+          <Modal
+            title="Register"
+            message="You were Add Successfully"
+            setShowModal={setShowModal}
+          />
+        )}
         <div className="main-content-createAccount">
           <div className="column-1">
             <form action="/" onSubmit={(e) => registerHandler(e)}>
@@ -176,6 +187,23 @@ const CreateAccount = () => {
                     confirmPassword,
                     "required|min:5"
                   )}
+                </ul>
+                <ul className="form-item">
+                  <li>
+                    <label htmlFor="text">َِِADDRESS:</label>
+                  </li>
+                  <li>
+                    <input
+                      type="text"
+                      name="address"
+                      value={address}
+                      onChange={(e) => {
+                        setAddress(e.target.value);
+                        validator.current.showMessageFor("address");
+                      }}
+                    />
+                  </li>
+                  {validator.current.message("address", address, "required")}
                 </ul>
                 <ul className="form-item">
                   <li>

@@ -1,17 +1,21 @@
+import React from "react";
+
 import { Link } from "react-router-dom";
 import "./header.modules.css";
+import { useState } from "react";
 const Header = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className="container">
       <div className="top-header">
         <div className="left-side">
           <div className="login">
-            <Link to="login">
+            <Link to="/login">
               <i class="fa fa-user"></i> logIn
             </Link>
           </div>
           <div className="create-account">
-            <Link to="createaccount">
+            <Link to="/createaccount">
               <i class="fa fa-lock"></i> create an account
             </Link>
           </div>
@@ -29,17 +33,21 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="main-header">
-        <div class="logo">
-          <h1>
-            
-              <span>E</span> -Shop
-           
-          </h1>
-        </div>
+      <nav className="main-header">
         <div className="navbar">
-          {" "}
-          <ul className="header-items">
+          <div class="logo">
+            <h1>
+              <span>E</span> -Shop
+            </h1>
+            <i
+              className="fa fa-bars"
+              aria-hidden="true"
+              onClick={() => setIsExpanded(!isExpanded)}
+            ></i>{" "}
+          </div>
+            <hr />
+
+          <ul className={`header-items ${isExpanded ? "collapsed" : ""}`}>
             <li className="header-item">
               <Link to="/">Home</Link>
             </li>
@@ -55,10 +63,9 @@ const Header = () => {
             <li className="header-item">
               <Link to="home">Electronic</Link>
             </li>
-           
           </ul>
         </div>
-      </div>
+      </nav>
     </div>
   );
 };

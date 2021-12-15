@@ -13,9 +13,13 @@ export const InitContext = createContext({
   setConfirmPassword: () => {},
   userName: "",
   setUserName: () => {},
+  address: "",
+  setAddress: () => {},
   number: "",
   setNumber: () => {},
   registerHandler: () => {},
   loginHandler: () => {},
   validator: null,
+  showModal:false,
+  setShowModal:()=>{},
 });

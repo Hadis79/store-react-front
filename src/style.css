@@ -19,6 +19,7 @@ body {
     background-color: #f8f8f8;
     max-width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
 .app {

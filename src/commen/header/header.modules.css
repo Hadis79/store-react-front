@@ -1,75 +1,175 @@
-    .container {
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: " Lato-Regular";
+}
+
+.top-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #816263;
+    padding: 2%;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: row;
+    margin-left: 8%;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: row;
+    margin-right: 8%;
+}
+
+.create-account {
+    margin-left: 4%;
+}
+
+.total-price {
+    margin-right: 4%;
+}
+
+.top-header a {
+    color: aliceblue;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+
+/* end top header */
+
+
+/* navbar */
+
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2% 8%;
+    background-color: #f8f8f8;
+}
+
+.logo h1 span {
+    border: 2px solid #816263;
+    color: #816263;
+    padding: 4px 12px;
+    border-radius: 50%;
+}
+
+.fa-bars {
+    display: none;
+}
+
+hr {
+    display: none;
+}
+
+ul.header-items {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0px;
+    text-align: center;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+li.header-item a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 12px;
+    border-radius: 5px;
+    transition: all .5s ease-in;
+}
+
+li.header-item a:hover {
+    background-color: transparent;
+    border: 1px solid #816263;
+    color: #816263;
+}
+
+@media only screen and (max-width: 800px) {
+    .logo {
         display: flex;
-        flex-direction: column;
+        white-space: nowrap;
+        margin: 20px 0px;
+        /* padding-left: 10px; */
+        /* padding-top: 0px !important; */
     }
-    
-    .top-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: #816263;
-        padding: 2%;
+}
+
+@media only screen and (max-width: 500px) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
-    
     .left-side {
-        display: flex;
-        flex-direction: row;
+        margin-left: 2%;
+    }
+    .right-side {
+        margin-right: 2%;
+    }
+    /* .create-account {
         margin-left: 8%;
     }
-    
-    .right-side {
-        display: flex;
-        flex-direction: row;
-        margin-right: 8%;
-    }
-    
-    .create-account {
-        margin-left: 24px;
-    }
-    
     .total-price {
-        margin-right: 24px;
-    }
-    
-    .top-header a {
-        color: aliceblue;
-        text-decoration: none;
-    }
-    /* end top header */
-    /* navbar */
-    
-    .main-header {
+        margin-right: 18px;
+    } */
+    .navbar {
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 2% 8%;
-        background-color: #f8f8f8;
+        flex-direction: column;
+        vertical-align: baseline;
     }
-    
-    .logo h1 span {
-        border: 2px solid #816263;
-        color: #816263;
-        padding: 4px 12px;
-        border-radius: 50%;
+    .fa-bars {
+        display: flex;
+        font-size: 2rem;
+        margin: auto;
+        margin-left: 46%;
+        cursor: pointer;
+        border: 1.5px solid rgb(104, 93, 93);
+        padding: 6px;
+        border-radius: 6px;
+        color: rgb(65, 68, 67);
     }
-    
-    ul.header-items {
+    hr {
+        display: block;
+    }
+    .collapsed {
         list-style: none;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         padding: 10px 0;
+        text-align: center;
     }
-    
+    ul.header-items {
+        flex-direction: column;
+    }
     li.header-item a {
-        margin-left: 2rem;
-        text-decoration: none;
+        display: block;
         color: rgb(0, 0, 0);
         padding: 10px 12px;
-        transition: all .5s ease-in
+        transition: all .5s ease-in;
+        text-align: center;
     }
-    
     li.header-item a:hover {
-        background-color: transparent;
-        border: 1px solid #816263;
+        border: none;
+        width: 100%;
         color: #816263;
+        border: 1px solid #816263;
     }
+}

@@ -5,7 +5,6 @@ import { useRef, useState } from "react/cjs/react.development";
 
 const UserContext = ({ children }) => {
   const [firstName, setFirstName] = useState("");
-
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState();
   const [password, setPassword] = useState(null);
@@ -13,6 +12,8 @@ const UserContext = ({ children }) => {
   const [number, setNumber] = useState(null);
   const [userName, setUserName] = useState(null);
   const [, forceUpdate] = useState();
+  const [address, setAddress] = useState("");
+  const [showModal,setShowModal]=useState(false)
   const validator = useRef(
     new SimpleReactValidator({
       messages: {
@@ -23,26 +24,72 @@ const UserContext = ({ children }) => {
       element: (message) => <div style={{ color: "red" }}>{message}</div>,
     })
   );
-  //registerHandler
-  const registerHandler = async (e) => {
+  //logIn handler
+  const logInHandler = async (e) => {
     console.log("form submitted");
     e.preventDefault();
     const user = {
-      firstName,
-      lastName,
       email,
       password,
-      number,
-      userName,
     };
     try {
       if (validator.current.allValid()) {
-        const register = await registerUserApi();
+        // const register = await registerUserApi();
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
     } catch (error) {}
+  };
+  //registerHandler
+  const registerHandler = async (e) => {
+    console.log("form submitted");
+    e.preventDefault();
+    const user = {
+      name: {
+        firstName,
+        lastName,
+      },
+      email,
+      password,
+      number,
+      userName,
+      address: {
+        city: "kilcoole",
+        street: "7835 new road",
+        number: 3,
+        zipcode: "12926-3874",
+        geolocation: {
+          lat: "-37.3159",
+          long: "81.1496",
+        },
+      },
+    };
+    const resetuser = () => {
+      setFirstName("");
+      setLastName("");
+      setUserName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setNumber("");
+      setAddress("");
+    };
+    try {
+      if (validator.current.allValid()) {
+        const { status } = await registerUserApi(user);
+        if (status === 200) {
+          setShowModal(true)
+        }
+      } else {
+        validator.current.showMessages();
+        forceUpdate(1);
+      }
+    } catch (error) {
+      setShowModal(true)
+
+      console.log(error);
+    }
   };
 
   return (
@@ -61,9 +108,13 @@ const UserContext = ({ children }) => {
         userName,
         setUserName,
         number,
+        address,
+        setAddress,
         setNumber,
+        showModal,
+        setShowModal,
         registerHandler,
-        loginHandler,
+        logInHandler,
         validator,
       }}
     >
