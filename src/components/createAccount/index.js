@@ -6,7 +6,7 @@ import Footer from "../../commen/footer";
 import Header from "../../commen/header";
 import { InitContext } from "../../context/InitContext";
 import { registerUserApi } from "../../services/user";
-import { Modal, modal } from "../../utils/modal";
+import { Modal} from "../../utils/modal";
 import "./createAccount.modules.css";
 const CreateAccount = () => {
   const registerContext = useContext(InitContext);
@@ -23,8 +23,9 @@ const CreateAccount = () => {
     setPassword,
     confirmPassword,
     setConfirmPassword,
-    address,
-    setAddress,
+    city,
+    setCity,
+    street,setStreet,
     number,
     setNumber,
     registerHandler,
@@ -190,21 +191,39 @@ const CreateAccount = () => {
                 </ul>
                 <ul className="form-item">
                   <li>
-                    <label htmlFor="text">َِِADDRESS:</label>
+                    <label htmlFor="text">CITY:</label>
                   </li>
                   <li>
                     <input
                       type="text"
-                      name="address"
-                      value={address}
+                      name="city"
+                      value={city}
                       onChange={(e) => {
-                        setAddress(e.target.value);
-                        validator.current.showMessageFor("address");
+                        setCity(e.target.value);
+                        validator.current.showMessageFor("city");
                       }}
                     />
                   </li>
-                  {validator.current.message("address", address, "required")}
+                  {validator.current.message("city", city, "required")}
                 </ul>
+                <ul className="form-item">
+                  <li>
+                    <label htmlFor="text">STREET:</label>
+                  </li>
+                  <li>
+                    <input
+                      type="text"
+                      name="street"
+                      value={street}
+                      onChange={(e) => {
+                        setStreet(e.target.value);
+                        validator.current.showMessageFor("street");
+                      }}
+                    />
+                  </li>
+                  {validator.current.message("street", street, "required")}
+                </ul>
+               
                 <ul className="form-item">
                   <li>
                     <label htmlFor="text">MOBILENUMBER:</label>

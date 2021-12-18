@@ -1,7 +1,17 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import "./modal.modules.css";
 
-export const Modal = ({ title, message,setShowModal }) => {
-     console.log('showw');
+export const Modal = ({ title, message, setShowModal }) => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  console.log("showw");
+  const modalClickedHandler = () => {
+    //redirect
+    if (pathname === "/login") {
+      navigate("/");
+    }
+    setShowModal(false);
+  };
   return (
     <>
       <div className="content"></div>
@@ -14,7 +24,7 @@ export const Modal = ({ title, message,setShowModal }) => {
           <p> {message}</p>
         </div>
         <div className="button">
-          <button onClick={()=>setShowModal(false)}>OK</button>
+          <button onClick={modalClickedHandler}>OK</button>
         </div>
       </section>
     </>

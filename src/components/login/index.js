@@ -4,11 +4,20 @@ import Footer from "../../commen/footer";
 import Header from "../../commen/header";
 
 import { InitContext } from "../../context/InitContext";
+import { Modal } from "../../utils/modal";
 import "./login.modules.css";
 const Login = () => {
   const loginContext = useContext(InitContext);
-  const { email, setEmail, password, setPassword, validator, logInHandler } =
-    loginContext;
+  const {
+    userName,
+    setUserName,
+    password,
+    setPassword,
+    validator,
+    logInHandler,
+    showModal,
+    setShowModal,
+  } = loginContext;
   return (
     <>
       <div className="login-container">
@@ -27,7 +36,13 @@ const Login = () => {
             </span>
           </div>
         </div>
-
+        {showModal ? (
+          <Modal
+            title="Login"
+            message="You Are LogIn"
+            setShowModal={setShowModal}
+          />
+        ) : null}
         <div className="main-content-login">
           <div className="column-1">
             <h2>NEW CUSTOMERS</h2>
@@ -47,20 +62,20 @@ const Login = () => {
               <div className="inputs">
                 <ul className="form-item">
                   <li>
-                    <label htmlFor="text">EMAIL ADDRESS:</label>
+                    <label htmlFor="text">USERNAME:</label>
                   </li>
                   <li>
                     <input
-                      type="email"
-                      name="email"
-                      value={email}
+                      type="text"
+                      name="userName"
+                      value={userName}
                       onChange={(e) => {
-                        setEmail(e.target.value);
-                        validator.current.showMessageFor("email");
+                        setUserName(e.target.value);
+                        validator.current.showMessageFor("userName");
                       }}
                     />
                   </li>
-                  {validator.current.message("email", email, "required|email")}
+                  {validator.current.message("userName", userName, "required")}
                 </ul>
                 <ul className="form-item">
                   <li>

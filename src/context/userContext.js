@@ -1,7 +1,9 @@
 import { InitContext } from "./InitContext";
 import SimpleReactValidator from "simple-react-validator";
-import { registerUserApi } from "../services/user";
+import { logInUserApi, registerUserApi } from "../services/user";
 import { useRef, useState } from "react/cjs/react.development";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserContext = ({ children }) => {
   const [firstName, setFirstName] = useState("");
@@ -13,7 +15,10 @@ const UserContext = ({ children }) => {
   const [userName, setUserName] = useState(null);
   const [, forceUpdate] = useState();
   const [address, setAddress] = useState("");
-  const [showModal,setShowModal]=useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const navigate = useNavigate();
   const validator = useRef(
     new SimpleReactValidator({
       messages: {
@@ -29,18 +34,33 @@ const UserContext = ({ children }) => {
     console.log("form submitted");
     e.preventDefault();
     const user = {
-      email,
+      username: userName,
       password,
     };
+    console.log(JSON.stringify(user));
     try {
       if (validator.current.allValid()) {
-        // const register = await registerUserApi();
+        const { data, status } = await logInUserApi(user);
+        if (status === 200) {
+          localStorage.setItem("token", data.token);
+          setShowModal(true);
+        }
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+      navigate("/createaccount");
+    }
   };
+  //scrollTop after show modal
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [showModal]);
   //registerHandler
   const registerHandler = async (e) => {
     console.log("form submitted");
@@ -55,8 +75,8 @@ const UserContext = ({ children }) => {
       number,
       userName,
       address: {
-        city: "kilcoole",
-        street: "7835 new road",
+        city,
+        street,
         number: 3,
         zipcode: "12926-3874",
         geolocation: {
@@ -73,20 +93,21 @@ const UserContext = ({ children }) => {
       setPassword("");
       setConfirmPassword("");
       setNumber("");
-      setAddress("");
+      setCity("");
+      setStreet("");
     };
     try {
       if (validator.current.allValid()) {
         const { status } = await registerUserApi(user);
         if (status === 200) {
-          setShowModal(true)
+          setShowModal(true);
         }
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
     } catch (error) {
-      setShowModal(true)
+      setShowModal(true);
 
       console.log(error);
     }
@@ -116,6 +137,10 @@ const UserContext = ({ children }) => {
         registerHandler,
         logInHandler,
         validator,
+        city,
+        setCity,
+        street,
+        setStreet,
       }}
     >
       {children}
