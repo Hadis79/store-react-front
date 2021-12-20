@@ -2,11 +2,10 @@ import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import SimpleReactValidator from "simple-react-validator";
+import AddressBar from "../../commen/addressbar";
 import Footer from "../../commen/footer";
 import Header from "../../commen/header";
 import { InitContext } from "../../context/InitContext";
-import { registerUserApi } from "../../services/user";
-import { Modal} from "../../utils/modal";
 import "./createAccount.modules.css";
 const CreateAccount = () => {
   const registerContext = useContext(InitContext);
@@ -30,34 +29,14 @@ const CreateAccount = () => {
     setNumber,
     registerHandler,
     validator,
-    showModal,
-    setShowModal,
+   
   } = registerContext;
   return (
     <>
       <div className="createaccount-container">
         <Header />
-        <div className="addressbar">
-          <div className="links">
-            <span>
-              <Link to="/">Home{" >"} </Link>
-            </span>
-            <span>CreateAccount</span>
-          </div>
-          <div>
-            <span className="title">
-              {" "}
-              <Link to="/">back to previous page</Link>
-            </span>
-          </div>
-        </div>
-        {showModal && (
-          <Modal
-            title="Register"
-            message="You were Add Successfully"
-            setShowModal={setShowModal}
-          />
-        )}
+       <AddressBar/>
+       
         <div className="main-content-createAccount">
           <div className="column-1">
             <form action="/" onSubmit={(e) => registerHandler(e)}>

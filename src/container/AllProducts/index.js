@@ -3,16 +3,16 @@ import HomePage from "../../components/Home";
 import { getProductsApi } from "../../services/products";
 
 const AllProducts = () => {
-    const [productsData,setProductsData]=useState([])
-    const [loading,setLoading]=useState(false)
+  const [productsData, setProductsData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const getProducts = async () => {
     try {
-        setLoading(true)
-      const {data} = await getProductsApi();
-      setProductsData(data)
-      setLoading(false)
+      setLoading(true);
+      const { data } = await getProductsApi();
+      setProductsData(data);
+      setLoading(false);
     } catch (err) {
-      setLoading(false)
+      setLoading(false);
 
       console.log(err);
     }

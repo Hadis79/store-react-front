@@ -24,6 +24,5 @@ export const InitContext = createContext({
   registerHandler: () => {},
   loginHandler: () => {},
   validator: null,
-  showModal: false,
-  setShowModal: () => {},
+ 
 });

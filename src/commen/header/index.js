@@ -52,7 +52,7 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="header-item">
-              <Link to="home">Men</Link>
+              <Link to="men">Men</Link>
             </li>
             <li className="header-item">
               <Link to="home">Women</Link>

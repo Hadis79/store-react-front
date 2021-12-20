@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Footer from "../../commen/footer";
 import Header from "../../commen/header";
+import 'react-toastify/dist/ReactToastify.css';
 
 import { InitContext } from "../../context/InitContext";
-import { Modal } from "../../utils/modal";
 import "./login.modules.css";
 const Login = () => {
   const loginContext = useContext(InitContext);
@@ -15,9 +16,7 @@ const Login = () => {
     setPassword,
     validator,
     logInHandler,
-    showModal,
-    setShowModal,
-  } = loginContext;
+   } = loginContext;
   return (
     <>
       <div className="login-container">
@@ -36,13 +35,7 @@ const Login = () => {
             </span>
           </div>
         </div>
-        {showModal ? (
-          <Modal
-            title="Login"
-            message="You Are LogIn"
-            setShowModal={setShowModal}
-          />
-        ) : null}
+       
         <div className="main-content-login">
           <div className="column-1">
             <h2>NEW CUSTOMERS</h2>
@@ -52,7 +45,7 @@ const Login = () => {
               addresses, view and track your orders in your account and more.
             </p>
             <div className="create-account-link">
-              <Link to="/">CREATE AN ACCOUNT</Link>
+              <Link to="/createaccount">CREATE AN ACCOUNT</Link>
             </div>
           </div>
           <div className="column-2">
@@ -73,7 +66,7 @@ const Login = () => {
                         setUserName(e.target.value);
                         validator.current.showMessageFor("userName");
                       }}
-                    />
+                      />
                   </li>
                   {validator.current.message("userName", userName, "required")}
                 </ul>
@@ -90,13 +83,13 @@ const Login = () => {
                         setPassword(e.target.value);
                         validator.current.showMessageFor("Password");
                       }}
-                    />
+                      />
                   </li>
                   {validator.current.message(
                     "Password",
                     password,
                     "required|min:5"
-                  )}
+                    )}
                 </ul>
                 <div className="form-item btn-login">
                   <p>Forgot Your password ?</p>

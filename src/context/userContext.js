@@ -4,6 +4,7 @@ import { logInUserApi, registerUserApi } from "../services/user";
 import { useRef, useState } from "react/cjs/react.development";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { errorToast, successToast } from "../utils/toast";
 
 const UserContext = ({ children }) => {
   const [firstName, setFirstName] = useState("");
@@ -15,7 +16,6 @@ const UserContext = ({ children }) => {
   const [userName, setUserName] = useState(null);
   const [, forceUpdate] = useState();
   const [address, setAddress] = useState("");
-  const [showModal, setShowModal] = useState(false);
   const [city, setCity] = useState("");
   const [street, setStreet] = useState("");
   const navigate = useNavigate();
@@ -42,8 +42,9 @@ const UserContext = ({ children }) => {
       if (validator.current.allValid()) {
         const { data, status } = await logInUserApi(user);
         if (status === 200) {
+          console.log("you loggedIn");
           localStorage.setItem("token", data.token);
-          setShowModal(true);
+          successToast("You logged In SuccessFully");
         }
       } else {
         validator.current.showMessages();
@@ -51,16 +52,18 @@ const UserContext = ({ children }) => {
       }
     } catch (error) {
       console.log(error);
+      errorToast("youshuld craete account");
       navigate("/createaccount");
     }
   };
   //scrollTop after show modal
   useEffect(() => {
+    console.log("execute");
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  }, [showModal]);
+  }, [children]);
   //registerHandler
   const registerHandler = async (e) => {
     console.log("form submitted");
@@ -100,14 +103,14 @@ const UserContext = ({ children }) => {
       if (validator.current.allValid()) {
         const { status } = await registerUserApi(user);
         if (status === 200) {
-          setShowModal(true);
+          // setShowModal(true);
         }
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
     } catch (error) {
-      setShowModal(true);
+      // setShowModal(true);
 
       console.log(error);
     }
@@ -132,8 +135,7 @@ const UserContext = ({ children }) => {
         address,
         setAddress,
         setNumber,
-        showModal,
-        setShowModal,
+
         registerHandler,
         logInHandler,
         validator,

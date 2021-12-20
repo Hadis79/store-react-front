@@ -8,6 +8,8 @@ import "../style.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AllProducts from "./AllProducts";
 import UserContext from "../context/userContext";
+import { ToastContainer } from "react-toastify";
+
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
           <Route path="/jewelery" element={<Jewelery />} />
           <Route path="/electronics" element={<Electronics />} />
         </Routes>
+        <ToastContainer/>
       </BrowserRouter>
     </div>
   );
