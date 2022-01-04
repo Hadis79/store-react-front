@@ -55,13 +55,13 @@ const Header = () => {
               <Link to="men">Men</Link>
             </li>
             <li className="header-item">
-              <Link to="home">Women</Link>
+              <Link to="woman">Women</Link>
             </li>
             <li className="header-item">
-              <Link to="home">Jewelery</Link>
+              <Link to="jewelery">Jewelery</Link>
             </li>
             <li className="header-item">
-              <Link to="home">Electronic</Link>
+              <Link to="electronics">Electronic</Link>
             </li>
           </ul>
         </div>

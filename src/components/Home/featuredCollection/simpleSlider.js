@@ -21,7 +21,7 @@ const SimpleSlider = ({ data }) => {
       <Slider {...settings}>
         {data.map((item) => {
           return (
-            <div className="slider-container">
+            <div key={item.id} className="slider-container">
               <img src={item.image} alt="image" />
               <p>
                 <i class="fa fa-shopping-cart"></i> {`$${item.price}`}

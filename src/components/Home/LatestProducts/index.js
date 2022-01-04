@@ -9,7 +9,7 @@ const LatestProducts = ({ lastData }) => {
       <div className="products-grid">
         {lastData.map((data) => {
           return (
-            <div className="column">
+            <div key={data.id} className="column">
               <div className="row">
                 <div className="img">
                   <img src={data.image} alt="" />
