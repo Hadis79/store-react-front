@@ -33,6 +33,11 @@
 
 .total-price {
     margin-right: 4%;
+    color: #ffff;
+}
+
+.cart {
+    color: #ffff;
 }
 
 .top-header a {

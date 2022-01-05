@@ -3,89 +3,117 @@ import AddressBar from "../../../commen/addressbar";
 import Footer from "../../../commen/footer";
 import Header from "../../../commen/header";
 import Pagination from "../../../commen/pagination";
-import "../category.style.css";
+import style from "../category.module.css";
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import Spinner from "../../../utils/loader";
+import { useState } from "react";
 
-const WomanClothing = ({data,loading}) => {
-  const params=useLocation()
-  const currentPage=params.pathname.split('/')[1]
-    return ( 
-        <>
-        <Header />
+const WomanClothing = ({
+  data,
+  totalData,
+  perPage,
+  currentPage,
+  onChangePage,
+  loading,
+}) => {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const params = useLocation();
+  const currentRout = params.pathname.split("/")[1];
+  console.log(data);
 
-        <container>
-          <div className="column-1">
-            <div className="row-1">
-              <h4 className="title">OURPRODUCTS</h4>
-         
-              <div className="table-link">
-            <Link to={"/"}>newProducts</Link>
-          </div>
-          <div className="table-link">
-            <Link to={"/"}>oldProducts</Link>
-          </div>
-          <div className="table-link">
-            <Link to={"/"}>T-shirts</Link>
-          </div>
-          <div className="table-link">
-            <Link to={"/"}>Pants</Link>
-          </div>
-          <div className="table-link">
-            <Link to={"/"}>Dress</Link>
-          </div>
-          <div className="table-link">
-            <Link to={"/"}>Shorts</Link>
-          </div>
-          <div className="table-link">
-            <Link to={"/"}>Shirts</Link>
-          </div>
-          <div className="table-link">
-            <Link to={"/"}>Register</Link>
+  //add price to cart
+  const addPriceHandler = (price) => {
+    window.scrollTo(0, 0);
+    console.log("clicked", price);
+    setTotalPrice(totalPrice + price);
+  };
+  return (
+    <>
+      <Header totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+
+      <container>
+        <div className={style.column1}>
+          <div className={style.row1}>
+            <h4 className={style.title}>OURPRODUCTS</h4>
+
+            <div className={style.tableLink}>
+              <Link to={"/"}>newProducts</Link>
+            </div>
+            <div className={style.tableLink}>
+              <Link to={"/"}>oldProducts</Link>
+            </div>
+            <div className={style.tableLink}>
+              <Link to={"/"}>T-shirts</Link>
+            </div>
+            <div className={style.tableLink}>
+              <Link to={"/"}>Pants</Link>
+            </div>
+            <div className={style.tableLink}>
+              <Link to={"/"}>Dress</Link>
+            </div>
+            <div className={style.tableLink}>
+              <Link to={"/"}>Shorts</Link>
+            </div>
+            <div className={style.tableLink}>
+              <Link to={"/"}>Shirts</Link>
+            </div>
+            <div className={style.tableLink}>
+              <Link to={"/"}>Register</Link>
+            </div>
           </div>
         </div>
-          </div>
-  
-          <div className="column-2">
-            <AddressBar currentPage={currentPage} />
-            <Pagination />
-            <div className="img-container">
-              <div className="row">
-                {!loading?data.map((item) => {
-                  console.log(item.title.slice(0,2));
+        <div className={style.column2}>
+          <AddressBar currentPage={currentRout} />
+         
+          <div className={style.imgContainer}>
+            <div className={style.row}>
+              {!loading ? (
+                data.map((item) => {
+                  console.log(item.title.slice(0, 2));
                   return (
-                    <div className="inner-column">
-                      <div className="card">
-                        <div className="image">
+                    <div className={style.innerColumn}>
+                      <div className={style.card}>
+                        <div className={style.image}>
                           <LazyLoadImage
-                          effect="blur"
-                          src={item.image}
-                          alt="image-products"
-
+                            effect="blur"
+                            src={item.image}
+                            alt="image-products"
                           />
-                        
                         </div>
-                        <div className="body-header">
-                        <div className="title">{item.title.slice(0,10)}...</div>
-                        <div className="price">${item.price}</div>
+                        <div className={style.bodyHeader}>
+                          <div className={style.title}>
+                            {item.title.slice(0, 10)}...
+                          </div>
+                          <div className={style.price}>${item.price}</div>
                         </div>
-                        <div className="body">
-                          {item.description.slice(0,50)}
+                        <div className={style.body}>
+                          {item.description.slice(0, 50)}
                         </div>
-                        <button>add to cart</button>
+                        <button onClick={() => addPriceHandler(item.price)}>
+                          add to cart
+                        </button>
                       </div>
                     </div>
                   );
-                }):<Spinner/>}
-              </div>
+                })
+              ) : (
+                <Spinner />
+              )}
             </div>
           </div>
-        </container>
-        <Footer />
-      </>  
-     );
-}
- 
+          <Pagination
+            totalData={totalData.length}
+            currentPage={currentPage}
+            perPage={perPage}
+            onChangePage={onChangePage}
+          />
+        </div>
+      </container>
+      <Footer />
+    </>
+  );
+};
+
 export default WomanClothing;

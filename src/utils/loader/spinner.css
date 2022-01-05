@@ -1,3 +1,6 @@
 .spinner {
-    text-align: center;
+    /* display: flex;
+    justify-content: center;
+    text-align: center; */
+    margin: 20% 150%;
 }

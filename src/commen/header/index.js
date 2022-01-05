@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./header.modules.css";
 import { useState } from "react";
-const Header = () => {
+const Header = ({totalPrice,setTotalPrice}) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div className="container">
@@ -22,14 +22,10 @@ const Header = () => {
         </div>
         <div className="right-side">
           <div className="total-price">
-            <Link to="home">
-              <i class="fa fa-dollar"></i> 00.00
-            </Link>
+              <i class="fa fa-dollar"></i> {totalPrice?totalPrice:'00.0'}
           </div>
-          <div className="cart">
-            <Link to="home">
+          <div className="cart" onClick={()=>setTotalPrice(0)}>
               <i class="fa fa-shopping-cart"></i> empty cart
-            </Link>
           </div>
         </div>
       </div>
@@ -45,7 +41,7 @@ const Header = () => {
               onClick={() => setIsExpanded(!isExpanded)}
             ></i>{" "}
           </div>
-            <hr />
+          <hr />
 
           <ul className={`header-items ${isExpanded ? "collapsed" : ""}`}>
             <li className="header-item">

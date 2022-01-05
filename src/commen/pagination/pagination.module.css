@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18%;
+}
+
+.pagination .pageNum {
+    border: 1px solid #816263;
+    border-radius: 2px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+
+/* .pagination .pageNum:not(:last-child) {
+    border-right: none;
+} */
