@@ -52,16 +52,16 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="header-item">
-              <Link to="men">Men</Link>
+              <Link to="/men">Men</Link>
             </li>
             <li className="header-item">
-              <Link to="woman">Women</Link>
+              <Link to="/woman">Women</Link>
             </li>
             <li className="header-item">
-              <Link to="jewelery">Jewelery</Link>
+              <Link to="/jewelery">Jewelery</Link>
             </li>
             <li className="header-item">
-              <Link to="electronics">Electronic</Link>
+              <Link to="/electronics">Electronic</Link>
             </li>
           </ul>
         </div>

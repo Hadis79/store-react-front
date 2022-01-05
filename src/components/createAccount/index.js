@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import SimpleReactValidator from "simple-react-validator";
 import AddressBar from "../../commen/addressbar";
@@ -31,11 +31,13 @@ const CreateAccount = () => {
     validator,
    
   } = registerContext;
+  const params=useLocation()
+  const currentPage=params.pathname.split('/')[1]
   return (
     <>
       <div className="createaccount-container">
         <Header />
-       <AddressBar/>
+       <AddressBar currentPage={currentPage}/>
        
         <div className="main-content-createAccount">
           <div className="column-1">

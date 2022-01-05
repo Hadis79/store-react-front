@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import './addressbar.modules.css'
 
 
-const AddressBar = () => {
+const AddressBar = ({currentPage}) => {
     return ( 
         <div className="addressbar">
         <div className="links">
           <span>
             <Link to="/">Home{" >"} </Link>
           </span>
-          <span>Login</span>
+          <span>{currentPage}</span>
         </div>
         <div>
           <span className="title">

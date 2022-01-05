@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Footer from "../../commen/footer";
 import Header from "../../commen/header";
@@ -17,6 +17,8 @@ const Login = () => {
     validator,
     logInHandler,
    } = loginContext;
+   const params=useLocation()
+  const currentPage=params.pathname.split('/')[1]
   return (
     <>
       <div className="login-container">
@@ -26,7 +28,7 @@ const Login = () => {
             <span>
               <Link to="/">Home{" >"} </Link>
             </span>
-            <span>Login</span>
+            <span>{currentPage}</span>
           </div>
           <div>
             <span className="title">

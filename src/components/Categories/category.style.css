@@ -9,7 +9,7 @@ container {
 container .column-1 {
     background-color: rgb(148, 147, 147);
     color: #fff;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 352px);
 }
 
 .column-1 h4 {
@@ -24,6 +24,7 @@ container .column-1 {
     margin: 2% 0px;
     padding: .98% 0px;
     width: 100%;
+    line-height: 22px;
 }
 
 .table-link a {

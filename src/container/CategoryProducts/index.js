@@ -12,25 +12,33 @@ import { getProductsCategoryApi } from "../../services/products";
 const CategoryProducts = ({baseName,api}) => {
     console.log(api);
     const [newData,setNewData]=useState([])
+    const [loading,setLoading]=useState(false)
+    
     const getCategoryInData=async()=>{
         try{
-
+setLoading(true)
             const data=await getProductsCategoryApi(api)
             setNewData(data.data)
-            console.log(data);
+            setLoading(false)
         }catch(err){
+            setLoading(false)
+
             console.log(err);
         }
     }
     useEffect(()=>{
 
         getCategoryInData()
-    },[])
+    },[baseName])
+    const allproducts={
+       data: newData,
+       loading
+    }
    const component={
-       jewelery:<Jewelery data={newData}/>,
-       men:<MenClothing data={newData}/>,
-       electronics:<Electronics data={newData}/>,
-       woman:<WomanClothing data={newData}/>
+       jewelery:<Jewelery {...allproducts}/>,
+       men:<MenClothing {...allproducts}/>,
+       electronics:<Electronics {...allproducts}/>,
+       woman:<WomanClothing {...allproducts}/>
 
     }
     console.log(baseName);

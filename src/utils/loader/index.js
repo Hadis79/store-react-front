@@ -1,5 +1,5 @@
 import Loader from "react-loader-spinner";
-import './spinner.modules.css'
+import './spinner.css'
 const Spinner = () => {
   return (
     <div className="spinner">

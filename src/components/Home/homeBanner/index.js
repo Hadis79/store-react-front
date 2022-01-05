@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import "./homeBanner.modules.css";
+import "./homeBanner.css";
 import HomeTextSlider from "./homeTextSlider";
 
 const HomeBanner = () => {
