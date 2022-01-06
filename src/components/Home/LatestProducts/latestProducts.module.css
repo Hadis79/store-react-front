@@ -1,9 +1,9 @@
-.products-container-grid {
+.productsContainerGrid {
     background-color: #f8f8f8;
     padding: 10px;
 }
 
-.products-container-grid h1 {
+.productsContainerGrid h1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
     font-family: 'PlayfairDisplay-Regular';
 }
 
-.products-grid {
+.productsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10%;
@@ -55,7 +55,7 @@
     color: #000;
 }
 
-.title-product {
+.titleProduct {
     padding: 20px;
 }
 

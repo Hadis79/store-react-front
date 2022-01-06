@@ -1,26 +1,26 @@
 import { Link } from "react-router-dom";
-import "./latestProducts.modules.css";
+import style from "./latestProducts.module.css";
 
 const LatestProducts = ({ lastData }) => {
   console.log("3 latetst Products", lastData);
   return (
-    <section className="products-container-grid">
+    <section className={style.productsContainerGrid}>
       <h1 >Latest Products</h1>
-      <div className="products-grid">
+      <div className={style.productsGrid}>
         {lastData.map((data) => {
           return (
-            <div key={data.id} className="column">
-              <div className="row">
-                <div className="img">
+            <div key={data.id} className={style.column}>
+              <div className={style.row}>
+                <div className={style.img}>
                   <img src={data.image} alt="" />
                 </div>
-              <div className="mask">
+              <div className={style.mask}>
                 <Link to='/'>Quick View</Link>
               </div>
-                <div className="title-product">
+                <div className={style.titleProduct}>
                 <p>{data.title}</p>
                 </div>
-                <p className="price"> <i class="fa fa-shopping-cart"></i> {`$${data.price}`}</p>
+                <p className={style.price}> <i class="fa fa-shopping-cart"></i> {`$${data.price}`}</p>
               </div>
             </div>
           );

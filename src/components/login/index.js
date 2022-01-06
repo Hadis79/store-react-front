@@ -6,7 +6,8 @@ import Header from "../../commen/header";
 import 'react-toastify/dist/ReactToastify.css';
 
 import { InitContext } from "../../context/InitContext";
-import "./login.modules.css";
+import style from "./login.module.css";
+import AddressBar from "../../commen/addressbar";
 const Login = () => {
   const loginContext = useContext(InitContext);
   const {
@@ -18,46 +19,33 @@ const Login = () => {
     logInHandler,
    } = loginContext;
    const params=useLocation()
-  const currentPage=params.pathname.split('/')[1]
+  const currentRoute=params.pathname.split('/')[1]
   return (
     <>
-      <div className="login-container">
+      <div className={style.loginContainer}>
         <Header />
-        <div className="addressbar">
-          <div className="links">
-            <span>
-              <Link to="/">Home{" >"} </Link>
-            </span>
-            <span>{currentPage}</span>
-          </div>
-          <div>
-            <span className="title">
-              {" "}
-              <Link to="/">back to previous page</Link>
-            </span>
-          </div>
-        </div>
+        <AddressBar currentPage={currentRoute}/>
        
-        <div className="main-content-login">
-          <div className="column-1">
+        <div className={style.mainContentLogin}>
+          <div className={style.column1}>
             <h2>NEW CUSTOMERS</h2>
             <p>
               By creating an account with our store, you will be able to move
               through the checkout process faster, store multiple shipping
               addresses, view and track your orders in your account and more.
             </p>
-            <div className="create-account-link">
+            <div className={style.createAccountLink}>
               <Link to="/createaccount">CREATE AN ACCOUNT</Link>
             </div>
           </div>
-          <div className="column-2">
+          <div className={style.column2}>
             <form action="/" onSubmit={(e) => logInHandler(e)}>
               <h2>REGISTERED CUSTOMERS</h2>
               <p>If you have an account with us, please log in.</p>
-              <div className="inputs">
-                <ul className="form-item">
+              <div className={style.inputs}>
+                <ul className={style.formItem}>
                   <li>
-                    <label htmlFor="text">USERNAME:</label>
+                    <label htmlFor={"text"}>USERNAME:</label>
                   </li>
                   <li>
                     <input
@@ -72,7 +60,7 @@ const Login = () => {
                   </li>
                   {validator.current.message("userName", userName, "required")}
                 </ul>
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">PASSWORD:</label>
                   </li>
@@ -93,7 +81,7 @@ const Login = () => {
                     "required|min:5"
                     )}
                 </ul>
-                <div className="form-item btn-login">
+                <div className={`${style.formItem} ${style.btnLogin}` }>
                   <p>Forgot Your password ?</p>
                   <button>LOGIN</button>
                 </div>

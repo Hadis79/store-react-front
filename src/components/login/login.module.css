@@ -1,32 +1,32 @@
-.login-container {
+.loginContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.main-content-login {
+.mainContentLogin {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 8% 8%;
     column-gap: 20px;
 }
 
-.column-1 {
+.column1 {
     display: flex;
     flex-direction: column;
 }
 
-.column-1 h2,
-.column-2 h2 {
+.column1 h2,
+.column2 h2 {
     margin-bottom: 20px;
 }
 
-.column-1 p {
+.column1 p {
     color: rgba(73, 73, 69, 0.274);
     margin-bottom: 40px;
 }
 
-.create-account-link a {
+.createAccountLink a {
     text-decoration: none;
     border: 1px solid #816263;
     padding: 10px;
@@ -35,12 +35,12 @@
     transition: all .5s ease-in-out;
 }
 
-.create-account-link a:hover {
+.createAccountLink a:hover {
     background-color: black;
     color: #fff;
 }
 
-.column-2 p {
+.column2 p {
     margin-top: 20px;
     color: rgba(73, 73, 69, 0.274);
 }
@@ -51,17 +51,18 @@
     margin-top: 10%;
 }
 
-.form-item {
+.formItem {
+    list-style: none;
     margin-top: 4%;
     width: 100%;
 }
 
-.form-item input:focus {
+.formItem input:focus {
     border: 2px solid rgba(66, 66, 66, 0.555);
     outline: rgba(66, 66, 66, 0.555);
 }
 
-.form-item label {
+.formItem label {
     color: rgb(87, 85, 85);
 }
 
@@ -71,16 +72,16 @@
     padding: 10px;
 }
 
-.form-item.btn-login {
+.formItem.btnLogin {
     display: flex;
     vertical-align: middle;
 }
 
-.form-item.btn-login p {
+.formItem.btnLogin p {
     color: rgb(94, 94, 221);
 }
 
-.form-item.btn-login button {
+.formItem.btnLogin button {
     margin-left: 2%;
     padding: 12px;
     background-color: #816263;
@@ -90,7 +91,7 @@
     transition: all .5s ease-in-out;
 }
 
-.form-item.btn-login button:hover {
+.formItem.btnLogin button:hover {
     background-color: black;
     color: #fff;
 }

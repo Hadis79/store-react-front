@@ -1,12 +1,10 @@
 import { useContext, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
-import SimpleReactValidator from "simple-react-validator";
 import AddressBar from "../../commen/addressbar";
 import Footer from "../../commen/footer";
 import Header from "../../commen/header";
 import { InitContext } from "../../context/InitContext";
-import "./createAccount.modules.css";
+import style from "./createAccount.module.css";
 const CreateAccount = () => {
   const registerContext = useContext(InitContext);
   const {
@@ -35,12 +33,12 @@ const CreateAccount = () => {
   const currentPage=params.pathname.split('/')[1]
   return (
     <>
-      <div className="createaccount-container">
+      <div className={style.createaccountContainer}>
         <Header />
        <AddressBar currentPage={currentPage}/>
        
-        <div className="main-content-createAccount">
-          <div className="column-1">
+        <div className={style.mainContentCreateAccount}>
+          <div className={style.column1}>
             <form action="/" onSubmit={(e) => registerHandler(e)}>
               <h2>REGISTRATION</h2>
               <p>
@@ -50,8 +48,8 @@ const CreateAccount = () => {
                   <Link to="/">click here</Link>
                 </span>
               </p>
-              <div className="inputs">
-                <ul className="form-item">
+              <div className={style.inputs}>
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">FIRSTNAME:</label>
                   </li>
@@ -72,7 +70,7 @@ const CreateAccount = () => {
                     "required"
                   )}
                 </ul>
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">LASTNAME:</label>
                   </li>
@@ -90,7 +88,7 @@ const CreateAccount = () => {
                   {validator.current.message("lastName", lastName, "required")}
                 </ul>
 
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">EMAIL:</label>
                   </li>
@@ -107,7 +105,7 @@ const CreateAccount = () => {
                   </li>
                   {validator.current.message("email", email, "required|email")}
                 </ul>
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">USERNAME:</label>
                   </li>
@@ -128,7 +126,7 @@ const CreateAccount = () => {
                     "required|min:5"
                   )}
                 </ul>
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">PASSWORD:</label>
                   </li>
@@ -149,7 +147,7 @@ const CreateAccount = () => {
                     "required|min:5"
                   )}
                 </ul>
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">RE-ENTERPASSWORD:</label>
                   </li>
@@ -170,7 +168,7 @@ const CreateAccount = () => {
                     "required|min:5"
                   )}
                 </ul>
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">CITY:</label>
                   </li>
@@ -187,7 +185,7 @@ const CreateAccount = () => {
                   </li>
                   {validator.current.message("city", city, "required")}
                 </ul>
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">STREET:</label>
                   </li>
@@ -205,7 +203,7 @@ const CreateAccount = () => {
                   {validator.current.message("street", street, "required")}
                 </ul>
                
-                <ul className="form-item">
+                <ul className={style.formItem}>
                   <li>
                     <label htmlFor="text">MOBILENUMBER:</label>
                   </li>
@@ -222,10 +220,10 @@ const CreateAccount = () => {
                   </li>
                   {validator.current.message("number", number, "required")}
                 </ul>
-                <ul className="form-item btn-createAccount">
+                <ul className={`${style.formItem} ${style.btnCreateAccount}`}>
                   <button>REGISTER NOW</button>
                 </ul>
-                <div className="form-item">
+                <div className={style.formItem}>
                   <p>
                     By clicking this button, you are agree to my{" "}
                     <span>
@@ -236,7 +234,7 @@ const CreateAccount = () => {
               </div>
             </form>
           </div>
-          <div className="column-2">
+          <div className={style.column2}>
             <h2>Completely Free Account</h2>
             <p>
               Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac
