@@ -1,5 +1,5 @@
 .footer-container {
-    background-color: #816268a2;
+    background-color: var(--primary);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -11,9 +11,11 @@
 .footer-title {
     display: flex;
     justify-content: start;
-    color: #816362;
+    color: #ffff;
     font-size: 20px;
     line-height: 25px;
+    font-weight: bolder;
+    margin-bottom: 22%;
 }
 
 .content {

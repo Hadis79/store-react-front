@@ -3,12 +3,12 @@
     grid-template-columns: repeat(2, 1fr);
     padding: 2% 8%;
     column-gap: 20px;
-    color: rgba(73, 73, 69, 0.274);
+    color: #333;
 }
 
 form span a {
     text-decoration: none;
-    color: #816263;
+    color: var(--primary);
 }
 
 .column1 {
@@ -33,12 +33,13 @@ form span a {
 }
 
 .formItem label {
-    color: #816263;
+    color: var(--primary);
 }
 
 .formItem.btnCreateAccount button {
-    background-color: #816263;
-    color: #fff;
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-weight: bolder;
     border: none;
     outline: none;
     transition: all .5s ease-in-out;
@@ -46,7 +47,7 @@ form span a {
 }
 
 .formItem.btnCreateAccount button:hover {
-    background-color: black;
+    background-color: var(--primary);
     color: #fff;
 }
 
@@ -56,6 +57,6 @@ form span a {
 }
 
 .formItem li input:focus {
-    border: 2px solid rgba(66, 66, 66, 0.555);
-    outline: rgba(66, 66, 66, 0.555);
+    border: 2px solid var(--light-secondary);
+    outline: var(--light-secondary);
 }

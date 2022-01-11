@@ -22,27 +22,26 @@
 }
 
 .column1 p {
-    color: rgba(73, 73, 69, 0.274);
+    color: #333;
     margin-bottom: 40px;
 }
 
 .createAccountLink a {
     text-decoration: none;
-    border: 1px solid #816263;
     padding: 10px;
     color: beige;
-    background-color: #816263;
+    background-color: var(--secondary);
     transition: all .5s ease-in-out;
 }
 
 .createAccountLink a:hover {
-    background-color: black;
+    background-color: var(--primary);
     color: #fff;
 }
 
 .column2 p {
     margin-top: 20px;
-    color: rgba(73, 73, 69, 0.274);
+    color: #333
 }
 
 .inputs {
@@ -58,12 +57,12 @@
 }
 
 .formItem input:focus {
-    border: 2px solid rgba(66, 66, 66, 0.555);
-    outline: rgba(66, 66, 66, 0.555);
+    border: 2px solid var(--light-secondary);
+    outline: var(--light-secondary)
 }
 
 .formItem label {
-    color: rgb(87, 85, 85);
+    color: var(--primary);
 }
 
 .inputs input {
@@ -78,13 +77,13 @@
 }
 
 .formItem.btnLogin p {
-    color: rgb(94, 94, 221);
+    color: var(--secondary);
 }
 
 .formItem.btnLogin button {
     margin-left: 2%;
     padding: 12px;
-    background-color: #816263;
+    background-color: var(--secondary);
     color: #fff;
     border: none;
     outline: none;
@@ -92,6 +91,6 @@
 }
 
 .formItem.btnLogin button:hover {
-    background-color: black;
+    background-color: var(--primary);
     color: #fff;
 }

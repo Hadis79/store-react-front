@@ -8,13 +8,13 @@ container {
 }
 
 container .column1 {
-    background-color: rgb(148, 147, 147);
-    color: #fff;
+    background-color: var(--light-begie);
+    color: var(--light);
     height: calc(100vh - 352px);
 }
 
 .column1 h4 {
-    background-color: #816263;
+    background-color: var(--primary);
     padding: 8%;
     width: 100%;
     text-align: center
@@ -31,35 +31,23 @@ container .column1 {
 .tableLink a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: var(--primary);
+    font-weight: bolder;
     padding: .98% 8%;
     transition: all .5s ease-in-out;
 }
 
 .tableLink a:hover {
-    background-color: #816263;
+    background-color: var(--secondary);
+    color: var(--light);
     width: 100%;
 }
 
 container .column2 {
-    background-color: rgba(223, 223, 223, 0.185);
+    background-color: var(--light);
     color: black;
     padding: 2%;
 }
-
-.column2.pageination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-}
-
-
-/* .column-2 .img-container {
-    display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    margin-top: 2%;
-} */
 
 .imgContainer .row {
     display: grid;
@@ -122,28 +110,7 @@ container .column2 {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 480px) {
-    container {
-        grid-template-columns: 100%;
-    }
-    container .column1 {
-        height: calc(100vh -600px);
-    }
-    .imgContainer .row {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .image img {
-        max-width: 80%;
-        height: 80%;
-        margin: 16%;
-    }
-}
-
-.spinner {
-    margin: 20% 100%;
-}
-
-@media only screen and (max-width: 768px) and (min-width:481px) {
+@media only screen and (max-width: 768px) {
     container {
         grid-template-columns: 28% 80%;
     }
@@ -172,4 +139,25 @@ container .column2 {
         height: 100%;
         padding: 8%;
     }
+}
+
+@media only screen and (max-width: 480px) {
+    container {
+        grid-template-columns: 100%;
+    }
+    container .column1 {
+        height: calc(100vh -300px);
+    }
+    .imgContainer .row {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .image img {
+        max-width: 80%;
+        height: 80%;
+        margin: 16%;
+    }
+}
+
+.spinner {
+    margin: 20% 100%;
 }

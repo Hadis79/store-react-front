@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #816263;
+    color: var(--primary);
     text-align: center;
     margin-top: 20px;
     font-size: 2rem;
@@ -25,9 +25,11 @@
 
 .column {
     width: 100%;
-    background-color: rgba(143, 143, 135, 0.205);
+    background-color: #fff;
+    box-shadow: 2px 2px 3px rgba(138, 138, 138, 0.425);
     padding: 20px;
     position: relative;
+    border-radius: 10px;
 }
 
 .column img {

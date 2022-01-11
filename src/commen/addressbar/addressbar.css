@@ -14,7 +14,8 @@
 
 .addressbar a {
     text-decoration: none;
-    color: #816381;
+    color: var(--primary);
+    font-weight: bolder;
 }
 
 

@@ -9,10 +9,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #816263;
+    background-color: var(--primary);
     padding: 2%;
     white-space: nowrap;
     width: 100%;
+    font-weight: bold;
 }
 
 .leftSide {
@@ -34,10 +35,12 @@
 .totalPrice {
     margin-right: 4%;
     color: #ffff;
+    cursor: pointer;
 }
 
 .cart {
     color: #ffff;
+    cursor: pointer;
 }
 
 .topHeader a {
@@ -67,8 +70,8 @@
 }
 
 .logo h1 span {
-    border: 2px solid #816263;
-    color: #816263;
+    border: 2px solid var(--primary);
+    color: var(--primary);
     padding: 4px 12px;
     border-radius: 50%;
 }
@@ -102,8 +105,8 @@ li.headerItem a {
 
 li.headerItem a:hover {
     background-color: transparent;
-    border: 1px solid #816263;
-    color: #816263;
+    border: 1px solid var(--primary);
+    color: var(--primary);
 }
 
 @media only screen and (max-width: 800px) {
@@ -176,7 +179,7 @@ li.headerItem a:hover {
     li.headerItem a:hover {
         border: none;
         width: 100%;
-        color: #816263;
-        border: 1px solid #816263;
+        color: var(--primary);
+        border: 1px solid var(--primary);
     }
 }

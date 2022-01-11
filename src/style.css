@@ -14,6 +14,14 @@
     src: local('PlayfairDisplay-Regular'), url('./fonts/PlayfairDisplay-Regular.ttf') format('truetype');
 }
 
+html {
+    --primary: #9F8189;
+    --secondary: #F3ABB6;
+    --light-secondary: #FFCAD4;
+    --light-begie: #FFE6D9;
+    --light: #FBECE5;
+}
+
 body {
     font-family: 'Lato-Regular';
     background-color: #f8f8f8;

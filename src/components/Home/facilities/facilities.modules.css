@@ -7,24 +7,26 @@
     justify-content: space-between;
     margin-top: 8%;
     padding: 1% 10%;
-    border-top: 1px solid #81626367;
-    border-bottom: 1px solid #81626367;
-    color: #816263;
+    border-top: 1px solid var(--secondary);
+    border-bottom: 1px solid var(--secondary);
+    color: var(--secondary);
 }
 
 .border-right {
-    border-right: 1px solid #81626367;
+    border-right: 1px solid var(--secondary);
 }
 
 .contact {
     display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
     font-size: 20px;
+    padding-right: 2%;
 }
 
 .contact span i {
-    color: rgb(86, 83, 250);
-    padding: 22%;
-    font-size: 28px;
+    color: var(--primary);
+    margin-left: 20px;
 }
 
 .shipping {
@@ -34,7 +36,7 @@
 }
 
 .shipping span i {
-    color: black;
+    color: var(--primary);
     font-size: 28px;
     padding: 0px 10px;
 }
