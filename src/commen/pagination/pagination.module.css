@@ -5,14 +5,15 @@
     margin-top: 18%;
 }
 
-.pagination .pageNum {
+.pagination .pageNum,
+.arrowPagination {
     border: 1px solid #816263;
-    border-radius: 2px;
-    padding: 8px;
+    border-radius: 50%;
+    padding: 8px 14px;
     cursor: pointer;
 }
 
-
-/* .pagination .pageNum:not(:last-child) {
-    border-right: none;
-} */
+.pagination .pageNum.active {
+    background-color: #816263;
+    color: aliceblue;
+}

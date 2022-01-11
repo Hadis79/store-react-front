@@ -94,7 +94,9 @@ const Electronics = ({data,
               </div>
             </div>
           );
-        }):<Spinner/>}
+        }): <div className={style.spinner}>
+        <Spinner />
+        </div>}
       </div>
     </div>
 <Pagination totalData={totalData.length} currentPage={currentPage} perPage={perPage} onChangePage={onChangePage} />

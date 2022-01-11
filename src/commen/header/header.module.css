@@ -5,7 +5,7 @@
     font-family: " Lato-Regular";
 }
 
-.top-header {
+.topHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,23 +15,23 @@
     width: 100%;
 }
 
-.left-side {
+.leftSide {
     display: flex;
     flex-direction: row;
     margin-left: 8%;
 }
 
-.right-side {
+.rightSide {
     display: flex;
     flex-direction: row;
     margin-right: 8%;
 }
 
-.create-account {
+.createAccount {
     margin-left: 4%;
 }
 
-.total-price {
+.totalPrice {
     margin-right: 4%;
     color: #ffff;
 }
@@ -40,7 +40,7 @@
     color: #ffff;
 }
 
-.top-header a {
+.topHeader a {
     color: aliceblue;
     text-decoration: none;
     vertical-align: middle;
@@ -58,7 +58,7 @@
     justify-content: space-between;
 }
 
-.main-header {
+.mainHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -73,7 +73,7 @@
     border-radius: 50%;
 }
 
-.fa-bars {
+.faBars {
     display: none;
 }
 
@@ -81,7 +81,7 @@ hr {
     display: none;
 }
 
-ul.header-items {
+ul.headerItems {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -92,7 +92,7 @@ ul.header-items {
     align-items: center;
 }
 
-li.header-item a {
+li.headerItem a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     padding: 10px 12px;
@@ -100,7 +100,7 @@ li.header-item a {
     transition: all .5s ease-in;
 }
 
-li.header-item a:hover {
+li.headerItem a:hover {
     background-color: transparent;
     border: 1px solid #816263;
     color: #816263;
@@ -111,6 +111,7 @@ li.header-item a:hover {
         display: flex;
         white-space: nowrap;
         margin: 20px 0px;
+        align-items: center;
         /* padding-left: 10px; */
         /* padding-top: 0px !important; */
     }
@@ -122,10 +123,10 @@ li.header-item a:hover {
         margin: 0;
         padding: 0;
     }
-    .left-side {
+    .leftSide {
         margin-left: 2%;
     }
-    .right-side {
+    .rightSide {
         margin-right: 2%;
     }
     /* .create-account {
@@ -140,13 +141,12 @@ li.header-item a:hover {
         flex-direction: column;
         vertical-align: baseline;
     }
-    .fa-bars {
+    .faBars {
         display: flex;
         font-size: 2rem;
         margin: auto;
         margin-left: 46%;
         cursor: pointer;
-        border: 1.5px solid rgb(104, 93, 93);
         padding: 6px;
         border-radius: 6px;
         color: rgb(65, 68, 67);
@@ -155,23 +155,25 @@ li.header-item a:hover {
         display: block;
     }
     .collapsed {
+        display: none !important;
         list-style: none;
-        display: flex;
         flex-direction: column;
         padding: 10px 0;
         text-align: center;
+        transition: all .5ms ease-in-out;
     }
-    ul.header-items {
+    ul.headerItems {
         flex-direction: column;
     }
-    li.header-item a {
+    li.headerItem a {
         display: block;
         color: rgb(0, 0, 0);
         padding: 10px 12px;
         transition: all .5s ease-in;
         text-align: center;
+        ;
     }
-    li.header-item a:hover {
+    li.headerItem a:hover {
         border: none;
         width: 100%;
         color: #816263;

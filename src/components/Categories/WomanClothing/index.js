@@ -15,6 +15,7 @@ const WomanClothing = ({
   totalData,
   perPage,
   currentPage,
+  setCurrentPage,
   onChangePage,
   loading,
 }) => {
@@ -99,7 +100,9 @@ const WomanClothing = ({
                   );
                 })
               ) : (
+                <div className={style.spinner}>
                 <Spinner />
+                </div>
               )}
             </div>
           </div>
@@ -108,6 +111,7 @@ const WomanClothing = ({
             currentPage={currentPage}
             perPage={perPage}
             onChangePage={onChangePage}
+            setCurrentPage={setCurrentPage}
           />
         </div>
       </container>

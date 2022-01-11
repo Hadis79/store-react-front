@@ -18,7 +18,6 @@ body {
     font-family: 'Lato-Regular';
     background-color: #f8f8f8;
     max-width: 100%;
-    overflow-x: hidden;
     position: relative;
 }
 
@@ -26,4 +25,5 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
 }

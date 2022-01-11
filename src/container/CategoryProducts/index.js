@@ -45,6 +45,7 @@ const startPage=paginate(newData,currentPage,perPage)
     perPage,
     currentPage,
     onChangePage,
+    setCurrentPage,
     loading,
 
   };
