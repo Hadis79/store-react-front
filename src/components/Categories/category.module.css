@@ -10,14 +10,17 @@ container {
 container .column1 {
     background-color: var(--light-begie);
     color: var(--light);
-    height: calc(100vh - 352px);
+    height: max-content;
+    border-radius: 5px;
 }
 
 .column1 h4 {
     background-color: var(--primary);
     padding: 8%;
     width: 100%;
-    text-align: center
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .tableLink {
@@ -110,54 +113,33 @@ container .column2 {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 980px) {
     container {
-        grid-template-columns: 28% 80%;
-    }
-    container .column1 {
-        height: calc(100vh - 700px);
-        width: 130px;
+        grid-template-columns: 28% 72%;
+        padding: 2% 4%;
     }
     .imgContainer .row {
         grid-template-columns: repeat(2, 1fr);
     }
+    container .column1 {
+        /* height: calc(100vh - 56%); */
+    }
     .image img {
-        max-width: 120px;
+        width: 150px;
         height: 200px;
-        margin: auto;
-        object-fit: cover;
-    }
-    .column1 h4 {
-        text-align: center;
-        padding-right: 20%;
-    }
-    .card {
-        min-width: 180px
-    }
-    .card .bodyHeader {
-        width: 90%;
-        height: 100%;
-        padding: 8%;
+        object-fit: fill;
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 650px) {
     container {
         grid-template-columns: 100%;
-    }
-    container .column1 {
-        height: calc(100vh -300px);
     }
     .imgContainer .row {
         grid-template-columns: repeat(1, 1fr);
     }
-    .image img {
-        max-width: 80%;
-        height: 80%;
-        margin: 16%;
+    container .column1 {
+        /* height: calc(100vh - 78%); */
+        margin-bottom: 18%;
     }
-}
-
-.spinner {
-    margin: 20% 100%;
 }

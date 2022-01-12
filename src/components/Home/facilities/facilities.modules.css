@@ -4,9 +4,9 @@
 
 .facilities-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    white-space: nowrap;
     margin-top: 8%;
-    padding: 1% 10%;
     border-top: 1px solid var(--secondary);
     border-bottom: 1px solid var(--secondary);
     color: var(--secondary);
@@ -20,8 +20,8 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    font-size: 20px;
-    padding-right: 2%;
+    font-size: 1.2rem;
+    padding: 2%;
 }
 
 .contact span i {
@@ -31,16 +31,42 @@
 
 .shipping {
     display: flex;
+    text-align: center;
     align-items: center;
     flex-direction: row;
 }
 
 .shipping span i {
     color: var(--primary);
-    font-size: 28px;
+    font-size: 1.2rem;
     padding: 0px 10px;
 }
 
 .order {
     text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+    .facilities-container {
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        border-top: none;
+        border-bottom: none;
+    }
+    .contact {
+        background-color: var(--secondary);
+        color: #ffff;
+        padding: 8% 30%;
+    }
+    .shipping {
+        background-color: var(--light);
+        color: var(--secondary);
+        padding: 8% 28%;
+    }
+    .order {
+        padding: 8% 22%;
+        background-color: var(--secondary);
+        color: #ffff;
+    }
 }
