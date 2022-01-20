@@ -47,7 +47,6 @@
 .inputs {
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
 }
 
 .formItem {
@@ -73,7 +72,7 @@
 
 .formItem.btnLogin {
     display: flex;
-    vertical-align: middle;
+    align-items: baseline;
 }
 
 .formItem.btnLogin p {
@@ -93,4 +92,13 @@
 .formItem.btnLogin button:hover {
     background-color: var(--primary);
     color: #fff;
+}
+
+@media(max-width:768px) {
+    .mainContentLogin {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .column2 {
+        margin-top: 60px;
+    }
 }

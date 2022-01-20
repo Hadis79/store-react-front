@@ -2,7 +2,7 @@
 
 .addressbar {
     display: flex;
-    /* background-color: #fff; */
+    background-color: var(--light-begie);
     justify-content: space-between;
     align-items: baseline;
     padding: 2% 12%;

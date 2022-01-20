@@ -14,10 +14,13 @@ const CategoryProducts = ({ baseName, api }) => {
 //pagination
   const [currentPage,setCurrentPage]=useState(1)
   const [perPage,setPerpage]=useState(3)
-  const getCategoryInData = async () => {
+  const [filter,setFilter]=useState({createdAt:''})
+  const getCategoryInData = async (filter) => {
+    console.log(filter);
     try {
       setLoading(true);
-      const data = await getProductsCategoryApi(api);
+      const data = await getProductsCategoryApi({api,params:filter});
+      console.log(data.data);
       setNewData(data.data);
       setLoading(false);
     } catch (err) {
@@ -34,7 +37,10 @@ const CategoryProducts = ({ baseName, api }) => {
     setCurrentPage(page)
     // console.log(page);
   }
-  
+  //filter newest
+  const filteringData=(newData)=>{
+setFilter(newData)
+  }
 //paginate
 const startPage=paginate(newData,currentPage,perPage)
 
@@ -47,7 +53,7 @@ const startPage=paginate(newData,currentPage,perPage)
     onChangePage,
     setCurrentPage,
     loading,
-
+filteringData
   };
   const component = {
     jewelery: <Jewelery {...allproducts} />,

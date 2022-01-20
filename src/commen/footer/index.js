@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./footer.modules.css";
 const Footer = () => {
   return (
+    <>
     <div className="footer-container">
       <div className=" column-1">
         <div className="footer-title">Help</div>
@@ -31,6 +32,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
+      </>
   );
 };
 

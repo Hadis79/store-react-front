@@ -32,7 +32,6 @@
 .shipping {
     display: flex;
     text-align: center;
-    align-items: center;
     flex-direction: row;
 }
 
@@ -40,6 +39,7 @@
     color: var(--primary);
     font-size: 1.2rem;
     padding: 0px 10px;
+    text-align: center;
 }
 
 .order {
@@ -58,15 +58,20 @@
         background-color: var(--secondary);
         color: #ffff;
         padding: 8% 30%;
+        align-items: center;
     }
     .shipping {
         background-color: var(--light);
         color: var(--secondary);
         padding: 8% 28%;
+        align-items: center;
+        justify-content: center;
     }
     .order {
         padding: 8% 22%;
         background-color: var(--secondary);
         color: #ffff;
+        justify-content: center;
+        align-items: center;
     }
 }

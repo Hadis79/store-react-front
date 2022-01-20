@@ -60,3 +60,12 @@ form span a {
     border: 2px solid var(--light-secondary);
     outline: var(--light-secondary);
 }
+
+@media (max-width:768px) {
+    .mainContentCreateAccount {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .column2 h2 {
+        margin-top: 2%;
+    }
+}

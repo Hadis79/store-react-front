@@ -12,8 +12,8 @@ const HomeBanner = () => {
             B <br />U <br />Y
           </h2>
         </div>
-      <HomeTextSlider />
         <div className="banner-rigth-side">
+      <HomeTextSlider />
           <div className="shop-collection">
             <Link to="home">SHOP COLLECTION NOW</Link>
           </div>

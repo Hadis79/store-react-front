@@ -35,3 +35,19 @@ body {
     justify-content: center;
     overflow-x: hidden;
 }
+
+
+/* scrollTop */
+
+.scrollTop i {
+    padding: 20px;
+    font-size: 22px;
+    border-radius: 50%;
+    border: none;
+    background: var(--secondary);
+    color: var(--light);
+    position: absolute;
+    bottom: 20px;
+    left: 90%;
+    cursor: pointer;
+}

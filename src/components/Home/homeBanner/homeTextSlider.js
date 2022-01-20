@@ -16,7 +16,7 @@ export default class HomeTextSlider extends Component {
       arrows: false,
     };
     return (
-      <div>
+      <div className="slider">
         <Slider {...settings}>
           <div>
             <h3>Smart But Casual</h3>

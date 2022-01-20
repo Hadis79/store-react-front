@@ -6,6 +6,7 @@
     height: 50%;
     padding: 2% 20%;
     width: 100%;
+    position: relative;
 }
 
 .footer-title {
@@ -15,7 +16,6 @@
     font-size: 20px;
     line-height: 25px;
     font-weight: bolder;
-    margin-bottom: 22%;
 }
 
 .content {
@@ -30,4 +30,10 @@
     text-decoration: none;
     line-height: 30px;
     color: #ffff;
+}
+
+@media(max-width:768px) {
+    .footer-container {
+        padding: 2% 10%;
+    }
 }

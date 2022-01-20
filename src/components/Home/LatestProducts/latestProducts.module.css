@@ -65,6 +65,14 @@
     color: #333;
 }
 
+@media screen and (max-width: 980px) {
+    .slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 650px) {
     .productsGrid {
         grid-template-columns: repeat(1, 1fr);

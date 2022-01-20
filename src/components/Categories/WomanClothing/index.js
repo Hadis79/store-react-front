@@ -9,6 +9,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Spinner from "../../../utils/loader";
 import { useState } from "react";
+import Filter from "../../Filter";
 
 const WomanClothing = ({
   data,
@@ -18,6 +19,7 @@ const WomanClothing = ({
   setCurrentPage,
   onChangePage,
   loading,
+  filteringData
 }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const params = useLocation();
@@ -68,6 +70,7 @@ const WomanClothing = ({
         <div className={style.column2}>
           <AddressBar currentPage={currentRout} />
          
+        <Filter filteringData={filteringData}/>
           <div className={style.imgContainer}>
             <div className={style.row}>
               {!loading ? (
