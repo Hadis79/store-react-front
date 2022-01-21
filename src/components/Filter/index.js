@@ -1,5 +1,4 @@
 
-import { useState } from 'react/cjs/react.development';
 import style from './filter.module.css'
 
 const Filter = ({filteringData}) => {

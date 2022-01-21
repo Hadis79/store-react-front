@@ -1,32 +1,50 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./modal.modules.css";
+import { useState } from 'react/cjs/react.development';
 
-export const Modal = ({ title, message, setShowModal }) => {
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
-  console.log("showw");
-  const modalClickedHandler = () => {
-    //redirect
-    if (pathname === "/login") {
-      navigate("/");
-    }
-    setShowModal(false);
-  };
+export const Modal = () => {
+  
+const [close,setClose]=useState(false)
+  //closeModal
+  const closeModal=()=>{
+setClose(true)
+}
   return (
     <>
-      <div className="content"></div>
-      <section className="modal">
-        <div className="title">
-          <h4>{title}</h4>
+      <div className={`modal ${close&& 'close'}`}>
+        <div className="content"></div>
+        <table>
+          <tr className="header">
+            <th>Details</th>
+          </tr>{" "}
+          <tr className="title">
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>date</th>
+            <th>delete</th>
+          </tr>
+          <tr className="modal-items">
+            <td>hard</td>
+            <td>2</td>
+            <td>2022-20-1</td>
+            <td><i className="fa fa-trash"/></td>
+          </tr>
+          <tr className="modal-items">
+            <td>hard</td>
+            <td>2</td>
+            <td>2022-20-1</td>
+            <td><i className="fa fa-trash"/></td>
+          </tr>
+        <div className="modal-btn">
+          <div className='ok-btn' onClick={()=>closeModal()}>
+            <button>Ok</button>
+          </div>
+          <div className='ok-btn' onClick={()=>closeModal()}>
+            <button>Cancle</button>
+          </div>
         </div>
-        <hr />
-        <div className="message">
-          <p> {message}</p>
-        </div>
-        <div className="button">
-          <button onClick={modalClickedHandler}>OK</button>
-        </div>
-      </section>
+        </table>
+      </div>
     </>
   );
 };

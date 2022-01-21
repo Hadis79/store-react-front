@@ -5,6 +5,7 @@ import { useRef, useState } from "react/cjs/react.development";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { errorToast, successToast } from "../utils/toast";
+import { toast } from 'react-toastify';
 
 const UserContext = ({ children }) => {
   const [firstName, setFirstName] = useState("");
@@ -103,15 +104,15 @@ const UserContext = ({ children }) => {
       if (validator.current.allValid()) {
         const { status } = await registerUserApi(user);
         if (status === 200) {
-          // setShowModal(true);
+          toast.success("you'r registered were successFully...")
+          navigate('/login')
         }
       } else {
         validator.current.showMessages();
         forceUpdate(1);
       }
     } catch (error) {
-      // setShowModal(true);
-
+toast.error('something went wrong...')
       console.log(error);
     }
   };

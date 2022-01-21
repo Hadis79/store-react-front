@@ -1,10 +1,17 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import style from  "./header.module.css";
+import style from "./header.module.css";
 import { useState } from "react";
-const Header = ({totalPrice,setTotalPrice}) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+import { Modal } from "../../utils/modal";
+const Header = () => {
+  const [isExpanded, setIsExpanded] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+
+  const modal = () => {
+    setShowModal(!showModal);
+  };
+console.log(showModal);
   return (
     <div className={style.container}>
       <div className={style.topHeader}>
@@ -21,11 +28,8 @@ const Header = ({totalPrice,setTotalPrice}) => {
           </div>
         </div>
         <div className={style.rightSide}>
-          <div className={style.totalPrice}>
-              <i class="fa fa-dollar"></i> {totalPrice?totalPrice:'00.0'}
-          </div>
-          <div className={style.cart} onClick={()=>setTotalPrice(0)}>
-              <i class="fa fa-shopping-cart"></i> empty cart
+          <div onClick={() => modal()} className={style.cart}>
+            <i class="fa fa-shopping-cart"></i> Your Cart
           </div>
         </div>
       </div>
@@ -42,8 +46,12 @@ const Header = ({totalPrice,setTotalPrice}) => {
             ></i>{" "}
           </div>
 
-          <ul className={`${style.headerItems} ${isExpanded ? `${style.collapsed }` : ""}`}>
-          <hr />
+          <ul
+            className={`${style.headerItems} ${
+              isExpanded ? `${style.collapsed}` : ""
+            }`}
+          >
+            <hr />
             <li className={style.headerItem}>
               <Link to="/">Home</Link>
             </li>
@@ -62,6 +70,7 @@ const Header = ({totalPrice,setTotalPrice}) => {
           </ul>
         </div>
       </nav>
+      {showModal && <Modal/>}{" "}
     </div>
   );
 };
