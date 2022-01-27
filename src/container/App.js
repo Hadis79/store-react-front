@@ -10,10 +10,13 @@ import AllProducts from "./AllProducts";
 import UserContext from "../context/userContext";
 import { ToastContainer } from "react-toastify";
 import { allroutes } from "./routes";
+import { useState } from "react";
+import { Modal } from "../utils/modal";
 
 function App() {
 
-
+  const [showModal, setShowModal] = useState(false);
+const [cart,setCart]=useState([])
   
   return (
     <div className="app">
@@ -48,15 +51,17 @@ function App() {
               element={
                 route.pathname === "/login" || route.pathname === "/createaccount" ? (
                   <UserContext>
-                    <route.component pathname={route.pathname} api={route.api} baseName={route.baseName}/>
+                    <route.component cart={cart} setCart={setCart} setShowModal={setShowModal} showModal={showModal} pathname={route.pathname} api={route.api} baseName={route.baseName}/>
                   </UserContext>
                 ) : (
-                  <route.component api={route.api} baseName={route.baseName}/>
+                  <route.component cart={cart} setCart={setCart} setShowModal={setShowModal} showModal={showModal} api={route.api} baseName={route.baseName}/>
                 )
               }
             />;
           })}
         </Routes>
+        {showModal&& <Modal cart={cart} setCart={setCart} setShowModal={setShowModal} showModal={showModal}/>}
+
         <ToastContainer />
       </BrowserRouter>
     </div>

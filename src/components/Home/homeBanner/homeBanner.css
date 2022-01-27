@@ -1,129 +1,137 @@
-.banner {
-    background: url('../../../utils//images/banner_img.jpg') center center/cover no-repeat;
-    width: 100%;
-    min-width: 700px;
-    min-height: 800px;
-}
-
-.banner-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.banner-left-side {
-    display: flex;
-    flex-direction: column;
-    font-size: 60px;
-    font-weight: 600px;
-    line-height: 8rem;
-    margin: 4% 18%;
-    transform: rotate(-15deg);
-    color: var(--primary);
-}
-
-.banner-rigth-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.shop-collection a {
-    display: flex;
-    text-decoration: none;
-    border: 1px solid var(--primary);
-    background-color: var(--light);
-    padding: 12px 20px;
-    color: #000;
-    font-size: 1.2rem;
-    transition: all .5s ease-in;
-}
-
-.shop-collection a:hover {
-    border: 1px solid var(--primary);
-    background-color: var(--secondary);
-    color: #fff;
-}
-
-.slick-slider {
-    padding-top: 10px;
-    padding-bottom: 20px;
-    margin: 2rem 3rem;
-    text-align: center;
-    font-size: 1.4rem;
-    display: grid;
-}
-
-.slick-dots li button:before {
-    width: 20%;
-    height: 10px;
-    border-radius: 10%;
-    font-size: 20px;
-    border-radius: 10px !important;
-    color: var(--primary);
-}
-
-.slick-dots li.slick-active button:before {
-    color: var(--secondary);
-    border-radius: 10px;
-}
-
-@media screen and (max-width: 980px) {
-    /* .banner {
+    .banner {
+        background: url('../../../utils//images/banner_img.jpg') center center/cover no-repeat;
         width: 100%;
+        min-width: 700px;
+        min-height: 800px;
     }
+    
+    .banner-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
     .banner-left-side {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        font-size: 60px;
+        font-weight: 600px;
+        line-height: 8rem;
+        margin: 4% 18%;
+        transform: rotate(-15deg);
+        color: var(--primary);
     }
+    
     .banner-rigth-side {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
     }
-    .slick-slider {
-        font-size: 1.5rem;
-        margin: 8rem 0rem 6rem 18rem;
-    }
-    .slider h3 {
-        font-size: 2rem;
-    }
-    .shop-collection a {
-        margin: 2rem 0rem 2rem 18rem;
-        transition: all .5s ease-in;
-    } */
-}
-
-@media screen and (max-width: 650px) {
-    /* .banner {
-        /* width: 100vw; */
-    /* min-height: 60vh; */
-    /* }
-    .banner-left-side {
-        display: none;
-    }
-    .banner-right-side .slick-slider {
-        font-size: 2rem;
-        margin-right: 2rem;
-        margin-top: 4rem;
-    }
-    .slider h3 {
-        font-size: 1rem;
-    }
-    .slider p {
-        font-size: .8rem;
-    }
+    
     .shop-collection a {
         display: flex;
-        width: 50%;
         text-decoration: none;
         border: 1px solid var(--primary);
         background-color: var(--light);
-        padding: 12px 22px;
+        padding: 12px 20px;
         color: #000;
-        font-size: 10px;
-        margin: 16rem 12rem 1rem 1rem;
+        font-size: 1.2rem;
         transition: all .5s ease-in;
-    }  */
-}
+    }
+    
+    .shop-collection a:hover {
+        border: 1px solid var(--primary);
+        background-color: var(--secondary);
+        color: #fff;
+    }
+    
+    .slick-slider {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        margin: 2rem 3rem;
+        text-align: center;
+        font-size: 1.4rem;
+        display: grid;
+    }
+    
+    .slick-dots li button:before {
+        width: 20%;
+        height: 10px;
+        border-radius: 10%;
+        font-size: 20px;
+        border-radius: 10px !important;
+        color: var(--primary);
+    }
+    
+    .slick-dots li.slick-active button:before {
+        color: var(--secondary);
+        border-radius: 10px;
+    }
+    
+    @media(max-width:1298px) {
+        .banner-left-side {
+            position: absolute;
+            top: 8%;
+            right: 62%;
+        }
+        .banner-rigth-side {
+            position: absolute;
+            top: 12%;
+            left: 42%;
+            font-size: .5rem !important;
+        }
+    }
+    
+    @media screen and (max-width:950px) {
+        .banner {
+            min-height: 90vh;
+            min-width: 100%;
+        }
+        .banner-left-side {
+            position: absolute;
+            top: 8%;
+            right: 66%;
+        }
+        .banner-rigth-side {
+            position: absolute;
+            top: 12%;
+            left: 42%;
+            font-size: .5rem !important;
+        }
+    }
+    
+    @media (max-width: 652px) {
+        .banner {
+            min-height: 60vh;
+            min-width: 100%;
+        }
+        .banner-left-side {
+            display: none;
+        }
+        .banner-rigth-side {
+            position: absolute;
+            top: 6%;
+            left: 38%;
+            font-size: .5rem !important;
+        }
+        .banner-rigth-side .slider h3,
+        p {
+            font-size: 12px !important;
+        }
+        .shop-collection {
+            display: flex;
+            justify-content: flex-end;
+            width: max-content;
+        }
+        .shop-collection a {
+            display: flex;
+            text-decoration: none;
+            border: 1px solid var(--primary);
+            background-color: var(--light);
+            padding: 12px 20px;
+            color: #000;
+            font-size: .6rem;
+            transition: all .5s ease-in;
+        }
+    }

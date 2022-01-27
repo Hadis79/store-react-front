@@ -15,6 +15,9 @@ const Jewelery = ({
   currentPage,
   onChangePage,
   loading,
+  setShowModal,
+  setCart,
+  cart
 }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const params = useLocation();
@@ -22,14 +25,14 @@ const Jewelery = ({
   console.log(data);
 
   //add price to cart
-  const addPriceHandler = (price) => {
+  const addPriceHandler = (product) => {
+    setCart(prv=>[...prv,product])
     window.scrollTo(0, 0);
-    console.log("clicked", price);
-    setTotalPrice(totalPrice + price);
+    console.log("clicked", product);
   };
   return (
     <>
-      <Header totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+      <Header setShowModal={setShowModal} cart={cart} setCart={setCart}/>
 
       <container>
         <div className={style.column1}>
@@ -89,7 +92,7 @@ const Jewelery = ({
                         <div className={style.body}>
                           {item.description.slice(0, 50)}
                         </div>
-                        <button onClick={() => addPriceHandler(item.price)}>
+                        <button onClick={() => addPriceHandler(item)}>
                           add to cart
                         </button>
                       </div>

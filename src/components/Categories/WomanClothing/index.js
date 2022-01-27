@@ -8,8 +8,6 @@ import style from "../category.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Spinner from "../../../utils/loader";
-import { useState } from "react";
-import Filter from "../../Filter";
 
 const WomanClothing = ({
   data,
@@ -19,23 +17,23 @@ const WomanClothing = ({
   setCurrentPage,
   onChangePage,
   loading,
-  filteringData
+  setShowModal,
+  setCart,
+  cart,
+  
 }) => {
-  const [totalPrice, setTotalPrice] = useState(0);
   const params = useLocation();
   const currentRout = params.pathname.split("/")[1];
-  console.log(data);
 
   //add price to cart
-  const addPriceHandler = (price) => {
+  const showModalCart = (product) => {
+    setCart([...cart,product])
     window.scrollTo(0, 0);
-    console.log("clicked", price);
-    setTotalPrice(totalPrice + price);
+    console.log("clicked", product);
   };
   return (
     <>
-      <Header totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
-
+      <Header setShowModal={setShowModal} cart={cart} setCart={setCart}/>
       <container>
         <div className={style.column1}>
           <div className={style.row1}>
@@ -70,12 +68,11 @@ const WomanClothing = ({
         <div className={style.column2}>
           <AddressBar currentPage={currentRout} />
          
-        <Filter filteringData={filteringData}/>
           <div className={style.imgContainer}>
             <div className={style.row}>
               {!loading ? (
                 data.map((item) => {
-                  console.log(item.title.slice(0, 2));
+                  // console.log(item.title.slice(0, 2));
                   return (
                     <div className={style.innerColumn}>
                       <div className={style.card}>
@@ -95,7 +92,7 @@ const WomanClothing = ({
                         <div className={style.body}>
                           {item.description.slice(0, 50)}
                         </div>
-                        <button onClick={() => addPriceHandler(item.price)}>
+                        <button onClick={() => showModalCart(item)}>
                           add to cart
                         </button>
                       </div>

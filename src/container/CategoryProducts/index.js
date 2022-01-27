@@ -5,21 +5,24 @@ import Jewelery from "../../components/Categories/Jewelery";
 import MenClothing from "../../components/Categories/MenClothing";
 import WomanClothing from "../../components/Categories/WomanClothing";
 import { getProductsCategoryApi } from "../../services/products";
-import {paginate} from '../../utils/paginate'
-const CategoryProducts = ({ baseName, api }) => {
+import { Modal } from "../../utils/modal";
+import { paginate } from "../../utils/paginate";
+// import { Modal } from "./../../utils/modal/index";
+const CategoryProducts = ({ baseName, api ,setShowModal,cart,setCart}) => {
   console.log(api);
   const [newData, setNewData] = useState([]);
   const [loading, setLoading] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
-//pagination
-  const [currentPage,setCurrentPage]=useState(1)
-  const [perPage,setPerpage]=useState(3)
-  const [filter,setFilter]=useState({createdAt:''})
-  const getCategoryInData = async (filter) => {
-    console.log(filter);
+
+  // const [cart, setCart] = useState([]);
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerpage] = useState(3);
+  const getCategoryInData = async () => {
     try {
       setLoading(true);
-      const data = await getProductsCategoryApi({api,params:filter});
+      const data = await getProductsCategoryApi({ api });
       console.log(data.data);
       setNewData(data.data);
       setLoading(false);
@@ -33,36 +36,40 @@ const CategoryProducts = ({ baseName, api }) => {
     getCategoryInData();
   }, [baseName]);
   //pagination
-  const onChangePage=(page)=>{
-    setCurrentPage(page)
+  const onChangePage = (page) => {
+    setCurrentPage(page);
     // console.log(page);
-  }
-  //filter newest
-  const filteringData=(newData)=>{
-setFilter(newData)
-  }
-//paginate
-const startPage=paginate(newData,currentPage,perPage)
+  };
 
+  //paginate
+  const startPage = paginate(newData, currentPage, perPage);
 
   const allproducts = {
     data: startPage,
-    totalData:newData,
+    totalData: newData,
     perPage,
     currentPage,
     onChangePage,
     setCurrentPage,
     loading,
-filteringData
+    setShowModal,
+    setCart,
+    cart,
   };
+  console.log("cart", cart);
   const component = {
     jewelery: <Jewelery {...allproducts} />,
     men: <MenClothing {...allproducts} />,
     electronics: <Electronics {...allproducts} />,
-    woman: <WomanClothing {...allproducts} />,
+    woman:<WomanClothing {...allproducts} /> ,
   };
   console.log(baseName);
-  return component[baseName];
+  return (
+    <>
+      {component[baseName]}
+     {/* {showModal&& <Modal cart={cart} setCart={setCart} setShowModal={setShowModal} showModal={showModal}/>} */}
+    </>
+  );
 };
 
 export default CategoryProducts;

@@ -16,7 +16,11 @@ const Electronics = ({data,
   perPage,
   currentPage,
   onChangePage,
-  loading,}) => {
+  loading,
+setShowModal,
+cart,
+setCart
+}) => {
   const [totalPrice,setTotalPrice]=useState(0)
   const params=useLocation()
   const currentRout=params.pathname.split('/')[1]
@@ -24,14 +28,14 @@ const Electronics = ({data,
   
   
   //add price to cart
-  const addPriceHandler=(price)=>{
-    window.scrollTo(0,0)
-    console.log('clicked',price);
-    setTotalPrice(totalPrice+price)
-  }
+  const showModalCart = (product) => {
+    setCart([...cart,product])
+    window.scrollTo(0, 0);
+    console.log("clicked", product);
+  };
     return ( 
         <>
-    <Header totalPrice={totalPrice} setTotalPrice={setTotalPrice}/>
+      <Header setShowModal={setShowModal} cart={cart} setCart={setCart}/>
 
 <container>
   <div className={style.column1}>
@@ -90,7 +94,7 @@ const Electronics = ({data,
                 <div className={style.body}>
                   {item.description.slice(0,50)}
                 </div>
-                <button onClick={()=>addPriceHandler(item.price)}>add to cart</button>
+                <button onClick={()=>showModalCart(item)}>add to cart</button>
               </div>
             </div>
           );

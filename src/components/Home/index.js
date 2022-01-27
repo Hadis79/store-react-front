@@ -6,8 +6,9 @@ import HomeBanner from "./homeBanner";
 import LatestProducts from "./LatestProducts";
 import { useEffect, useState } from "react";
 import Spinner from "../../utils/loader";
+import ModalCart from "../../utils/modal";
 
-const HomePage = ({ data, loading }) => {
+const HomePage = ({ data, loading ,setShowModal,cart,setCart}) => {
   const [latestProducts, setLatestProducts] = useState([]);
   const [popular, setPopular] = useState([]);
   useEffect(() => {
@@ -21,7 +22,7 @@ const HomePage = ({ data, loading }) => {
   console.log(latestProducts);
   return (
     <>
-      <Header />
+      <Header setShowModal={setShowModal} cart={cart} setCart={setCart}/>
       <HomeBanner />
       <Facilities />
 

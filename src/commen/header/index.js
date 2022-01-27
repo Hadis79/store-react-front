@@ -1,17 +1,16 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import style from "./header.module.css";
 import { useState } from "react";
-import { Modal } from "../../utils/modal";
-const Header = () => {
+// import { Modal } from "../../utils/modal";
+const Header = ({setShowModal}) => {
   const [isExpanded, setIsExpanded] = useState(true);
-  const [showModal, setShowModal] = useState(false);
-
-  const modal = () => {
-    setShowModal(!showModal);
-  };
-console.log(showModal);
+  
+const modalHandler=()=>{
+  setShowModal(true)
+}
+const location=useLocation()
   return (
     <div className={style.container}>
       <div className={style.topHeader}>
@@ -27,8 +26,9 @@ console.log(showModal);
             </Link>
           </div>
         </div>
+        
         <div className={style.rightSide}>
-          <div onClick={() => modal()} className={style.cart}>
+          <div onClick={modalHandler} className={style.cart}>
             <i class="fa fa-shopping-cart"></i> Your Cart
           </div>
         </div>
@@ -70,7 +70,7 @@ console.log(showModal);
           </ul>
         </div>
       </nav>
-      {showModal && <Modal/>}{" "}
+      
     </div>
   );
 };

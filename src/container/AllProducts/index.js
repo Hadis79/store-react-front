@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import HomePage from "../../components/Home";
 import { getProductsApi } from "../../services/products";
-import { Modal } from './../../utils/modal/index';
+// import { Modal } from './../../utils/modal/index';
 
-const AllProducts = () => {
+const AllProducts = ({cart,setCart,showModal,setShowModal}) => {
         const [productsData, setProductsData] = useState([]);
         const [loading, setLoading] = useState(false);
+        
         const getProducts = async() => {
             try {
                 setLoading(true);
@@ -21,9 +22,10 @@ const AllProducts = () => {
         useEffect(() => {
             getProducts();
         }, []);
-        return ( <> < HomePage data = { productsData }
+        return ( <> < HomePage cart={cart} setCart={setCart} setShowModal={setShowModal} showModal={showModal} data = { productsData }
             loading = { loading }
-            /> <Modal/>
+
+            />
 
             </>);
         };

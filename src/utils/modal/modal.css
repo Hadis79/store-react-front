@@ -1,5 +1,5 @@
         .modal {
-            max-width: 100%;
+            width: 100%;
             border-collapse: collapse;
         }
         
@@ -12,7 +12,7 @@
             left: 32%;
             background-color: rgb(255, 255, 255);
             box-shadow: 5px 10px 8px rgba(51, 51, 51, 0.616);
-            width: 36%;
+            width: 38%;
             z-index: 3;
             border-radius: 8px;
             font-family: 'PlayfairDisplay-Regular';
@@ -35,15 +35,41 @@
             width: 100%;
             height: 100%;
             transition: all .5s ease-in-out;
+            z-index: 3;
         }
         
         .modal .header {
-            /* border: 2px solid var(--primary); */
             border-top-right-radius: 5px;
             border-top-left-radius: 5px;
             background-color: var(--primary);
             color: var(--light);
-            padding: 8px 0px;
+            padding: 12px 0px;
+            position: relative;
+            background-image: linear-gradient(315deg, var(--light) 0%, var(--primary) 74%);
+            font-weight: bolder;
+            word-spacing: 22px;
+        }
+        
+        .modal .header ::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 10px;
+            background-size: 20px 40px;
+            background-image: radial-gradient(circle at 10px -15px, transparent 20px, var(--light) 21px);
+        }
+        
+        .modal .header ::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 15px;
+            background-size: 40px 40px;
+            background-image: radial-gradient(circle at 10px 26px, var(--light) 20px, transparent 21px);
         }
         
         .modal tr:nth-child(even) {
@@ -53,6 +79,7 @@
         .modal .title,
         .modal-items {
             padding: 8px 0px;
+            color: var(--primary);
             /* border-left: 2px solid var(--primary);
             border-right: 2px solid var(--primary);
             border-bottom: 2px solid var(--primary); */
@@ -63,17 +90,45 @@
             justify-content: space-between;
             border-bottom-right-radius: 5px;
             border-bottom-left-radius: 5px;
-            background-color: var(--primary);
-            padding: 20px;
+            background-image: linear-gradient(315deg, var(--light) 0%, var(--primary) 68%);
+            padding: 12px;
         }
         
         .modal-btn button {
             border: none;
-            padding: 4px 12px;
+            padding: 8px 24px;
             border-radius: 2px;
             cursor: pointer;
+            background-color: var(--light);
+            color: var(--primary);
+            font-weight: bolder;
         }
         
         .close {
             display: none;
+        }
+        
+        .empty-cart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            margin: auto;
+            font-weight: bolder;
+            color: var(--primary);
+        }
+        
+        @media(max-width:1024px) {
+            table {
+                left: 22%;
+                width: 58%;
+            }
+        }
+        
+        @media(max-width:668px) {
+            table {
+                left: 4px;
+                width: 98%;
+            }
         }

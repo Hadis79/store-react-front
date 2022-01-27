@@ -1,48 +1,56 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import "./modal.modules.css";
-import { useState } from 'react/cjs/react.development';
+import "./modal.css";
+import { useState } from "react";
 
-export const Modal = () => {
-  
-const [close,setClose]=useState(false)
+export const Modal = ({ setShowModal, cart, setCart }) => {
+  const [close, setClose] = useState(false);
+  // const getProducts=localStorage.getItem(JSON.parse('products'))
+  // console.log(getProducts);
   //closeModal
-  const closeModal=()=>{
-setClose(true)
-}
+  const closeModal = () => {
+    setClose(true);
+    setShowModal(false);
+  };
+  //remove product handler
+  const removeProductHandler = (id) => {
+    const removeItem = cart.filter((item) => item.id !== id);
+    setCart(removeItem);
+  };
+  console.log('modal cart',cart);
   return (
     <>
-      <div className={`modal ${close&& 'close'}`}>
+      <div className={`modal ${close && "close"}`}>
         <div className="content"></div>
+
         <table>
           <tr className="header">
             <th>Details</th>
           </tr>{" "}
           <tr className="title">
             <th>Product</th>
-            <th>Quantity</th>
-            <th>date</th>
+            <th>price</th>
             <th>delete</th>
           </tr>
-          <tr className="modal-items">
-            <td>hard</td>
-            <td>2</td>
-            <td>2022-20-1</td>
-            <td><i className="fa fa-trash"/></td>
-          </tr>
-          <tr className="modal-items">
-            <td>hard</td>
-            <td>2</td>
-            <td>2022-20-1</td>
-            <td><i className="fa fa-trash"/></td>
-          </tr>
-        <div className="modal-btn">
-          <div className='ok-btn' onClick={()=>closeModal()}>
-            <button>Ok</button>
+          {cart.length!==0 ?
+            cart.map((item) => {
+              return (
+                <tr className="modal-items">
+                  <td>{item.title.slice(0, 10)}</td>
+                  <td>{item.price}</td>
+                  <td onClick={() => removeProductHandler(item.id)}>
+                    <i className="fa fa-trash" />
+                  </td>
+                </tr>
+              );
+            }):<div className="empty-cart">you havn't add product yet...</div>}
+          <div className="modal-btn">
+            <div className="ok-btn" onClick={() => closeModal()}>
+              <button>Ok</button>
+            </div>
+            <div className="ok-btn" onClick={() => closeModal()}>
+              <button>Cancle</button>
+            </div>
           </div>
-          <div className='ok-btn' onClick={()=>closeModal()}>
-            <button>Cancle</button>
-          </div>
-        </div>
         </table>
       </div>
     </>

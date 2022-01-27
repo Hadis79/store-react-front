@@ -17,21 +17,24 @@ const MenClothing = ({
   setCurrentPage,
   onChangePage,
   loading,
+  setShowModal,
+  setCart,
+ cart
 }) => {
-  const [totalPrice, setTotalPrice] = useState(0);
   const params = useLocation();
   const currentRout = params.pathname.split("/")[1];
   console.log(data);
 
   //add price to cart
-  const addPriceHandler = (price) => {
+  const showModalCart = (product) => {
+    setCart([...cart,product])
     window.scrollTo(0, 0);
-    console.log("clicked", price);
-    setTotalPrice(totalPrice + price);
+    console.log("clicked", product);
   };
+  console.log(cart);
   return (
     <>
-      <Header totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+      <Header setShowModal={setShowModal} cart={cart} setCart={setCart}/>
 
       <container>
         <div className={style.column1}>
@@ -91,7 +94,7 @@ const MenClothing = ({
                         <div className={style.body}>
                           {item.description.slice(0, 50)}
                         </div>
-                        <button onClick={() => addPriceHandler(item.price)}>
+                        <button onClick={() => showModalCart(item)}>
                           add to cart
                         </button>
                       </div>

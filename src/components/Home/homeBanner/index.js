@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ModalCart from "../../../utils/modal/index";
 
 import "./homeBanner.css";
 import HomeTextSlider from "./homeTextSlider";
