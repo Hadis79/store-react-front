@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -50,7 +50,7 @@ const SimpleSlider = ({ data }) => {
         {data.map((item) => {
           return (
             <div key={item.id} className="slider-container">
-              <img src={item.image} alt="image" />
+              <img src={item.image} alt="slider pic" />
               <p>
                 <i class="fa fa-shopping-cart"></i> {`$${item.price}`}
               </p>

@@ -38,12 +38,14 @@ form span a {
 
 .formItem.btnCreateAccount button {
     background-color: var(--secondary);
-    color: var(--primary);
+    color: white;
     font-weight: bolder;
     border: none;
     outline: none;
     transition: all .5s ease-in-out;
     padding: 10px 40px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .formItem.btnCreateAccount button:hover {

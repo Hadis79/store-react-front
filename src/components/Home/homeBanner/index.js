@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import ModalCart from "../../../utils/modal/index";
-
+import img from '../../../utils/images/banner_img.jpg'
 import "./homeBanner.css";
 import HomeTextSlider from "./homeTextSlider";
 
 const HomeBanner = () => {
   return (
     <div className="banner">
+      <img src={img} alt="banner pic" />
       <div className="banner-container">
         <div className="banner-left-side">
           <h2>
@@ -16,7 +16,7 @@ const HomeBanner = () => {
         <div className="banner-rigth-side">
       <HomeTextSlider />
           <div className="shop-collection">
-            <Link to="home">SHOP COLLECTION NOW</Link>
+            <Link to="/">SHOP COLLECTION NOW</Link>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ container {
     color: #fff;
     padding: 2% 8%;
     overflow-x: hidden;
+    font-family: 'Lora', sans-serif;
 }
 
 container .column1 {
@@ -111,6 +112,13 @@ container .column2 {
     border-radius: 2px;
     margin: 20px;
     cursor: pointer;
+}
+
+.spinner {
+    position: absolute;
+    top: 38%;
+    left: 55%;
+    margin: 0px auto;
 }
 
 @media screen and (max-width: 980px) {

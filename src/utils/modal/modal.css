@@ -1,6 +1,7 @@
         .modal {
             width: 100%;
             border-collapse: collapse;
+            font-family: 'Lora', sans-serif;
         }
         
         table {
@@ -15,7 +16,7 @@
             width: 38%;
             z-index: 3;
             border-radius: 8px;
-            font-family: 'PlayfairDisplay-Regular';
+            font-family: 'Lora', sans-serif;
             transition: all .5s ease-in-out;
         }
         

@@ -1,11 +1,9 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import "./modal.css";
 import { useState } from "react";
 
 export const Modal = ({ setShowModal, cart, setCart }) => {
   const [close, setClose] = useState(false);
-  // const getProducts=localStorage.getItem(JSON.parse('products'))
-  // console.log(getProducts);
+  
   //closeModal
   const closeModal = () => {
     setClose(true);
@@ -42,7 +40,7 @@ export const Modal = ({ setShowModal, cart, setCart }) => {
                   </td>
                 </tr>
               );
-            }):<div className="empty-cart">you havn't add product yet...</div>}
+            }):<div className="empty-cart">you havn't added product yet...</div>}
           <div className="modal-btn">
             <div className="ok-btn" onClick={() => closeModal()}>
               <button>Ok</button>

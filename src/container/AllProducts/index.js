@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import HomePage from "../../components/Home";
 import { getProductsApi } from "../../services/products";
-// import { Modal } from './../../utils/modal/index';
 
 const AllProducts = ({cart,setCart,showModal,setShowModal}) => {
         const [productsData, setProductsData] = useState([]);

@@ -32,6 +32,7 @@
     color: beige;
     background-color: var(--secondary);
     transition: all .5s ease-in-out;
+    border-radius: 5px;
 }
 
 .createAccountLink a:hover {
@@ -44,9 +45,23 @@
     color: #333
 }
 
-.inputs {
+.yourInfo {
     display: flex;
     flex-direction: column;
+    margin: 2% auto;
+    color: red;
+    border-radius: 5px;
+}
+
+.yourInfo .userName,
+.yourInfo .password {
+    display: flex;
+    align-items: baseline;
+}
+
+.yourInfo .userName p,
+.yourInfo .password p {
+    margin: 2px 8px;
 }
 
 .formItem {
@@ -81,7 +96,9 @@
 
 .formItem.btnLogin button {
     margin-left: 2%;
-    padding: 12px;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
     background-color: var(--secondary);
     color: #fff;
     border: none;

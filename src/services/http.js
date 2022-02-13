@@ -9,7 +9,6 @@ axios.interceptors.response.use(null, (err) => {
     err.response.status >= 400 &&
     err.response.status < 500;
   if (!expectedError) {
-    // <Modal title="Server Error" message="You were Add Successfully" />;
     console.log('server Error');
   }
   return Promise.reject();

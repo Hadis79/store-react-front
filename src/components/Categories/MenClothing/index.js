@@ -7,7 +7,6 @@ import Spinner from "../../../utils/loader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import style from "../category.module.css";
-import { useState } from "react";
 
 const MenClothing = ({
   data,

@@ -1,16 +1,13 @@
-import React from "react";
+import React,{useState} from "react";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 import style from "./header.module.css";
-import { useState } from "react";
-// import { Modal } from "../../utils/modal";
 const Header = ({setShowModal}) => {
   const [isExpanded, setIsExpanded] = useState(true);
   
 const modalHandler=()=>{
   setShowModal(true)
 }
-const location=useLocation()
   return (
     <div className={style.container}>
       <div className={style.topHeader}>
@@ -47,8 +44,7 @@ const location=useLocation()
           </div>
 
           <ul
-            className={`${style.headerItems} ${
-              isExpanded ? `${style.collapsed}` : ""
+            className={`${style.headerItems} ${ isExpanded ? style.collapsed : ""
             }`}
           >
             <hr />

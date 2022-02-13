@@ -1,7 +1,4 @@
-import Electronics from "../components/Categories/Electronics";
-import Jewelery from "../components/Categories/Jewelery";
-import MenClothing from "../components/Categories/MenClothing";
-import WomanClothing from "../components/Categories/WomanClothing";
+
 import CreateAccount from "../components/createAccount";
 import Login from "../components/login";
 import AllProducts from "./AllProducts";
@@ -44,11 +41,10 @@ export const allroutes = [
     api: "jewelery",
     component: CategoryProducts,
   },
-  ,
   {
     pathname: "/electronics",
     baseName: "electronics",
     api: "electronics",
     component: CategoryProducts,
-  },
+  }
 ];

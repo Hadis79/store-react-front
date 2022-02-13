@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Footer from "../../commen/footer";
 import Header from "../../commen/header";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import { InitContext } from "../../context/InitContext";
 import style from "./login.module.css";
@@ -17,15 +17,15 @@ const Login = () => {
     setPassword,
     validator,
     logInHandler,
-   } = loginContext;
-   const params=useLocation()
-  const currentRoute=params.pathname.split('/')[1]
+  } = loginContext;
+  const params = useLocation();
+  const currentRoute = params.pathname.split("/")[1];
   return (
     <>
       <div className={style.loginContainer}>
         <Header />
-        <AddressBar currentPage={currentRoute}/>
-       
+        <AddressBar currentPage={currentRoute} />
+
         <div className={style.mainContentLogin}>
           <div className={style.column1}>
             <h2>NEW CUSTOMERS</h2>
@@ -42,6 +42,16 @@ const Login = () => {
             <form action="/" onSubmit={(e) => logInHandler(e)}>
               <h2>REGISTERED CUSTOMERS</h2>
               <p>If you have an account with us, please log in.</p>
+              <div className={style.yourInfo}>
+                <div className={style.userName}>
+                  <span>*UserName:</span>
+                  <p> mor_2314</p>
+                </div>
+                <div className={style.password}>
+                  <span>*Password:</span>
+                  <p>83r5^_</p>
+                </div>
+              </div>
               <div className={style.inputs}>
                 <ul className={style.formItem}>
                   <li>
@@ -56,7 +66,7 @@ const Login = () => {
                         setUserName(e.target.value);
                         validator.current.showMessageFor("userName");
                       }}
-                      />
+                    />
                   </li>
                   {validator.current.message("userName", userName, "required")}
                 </ul>
@@ -73,15 +83,15 @@ const Login = () => {
                         setPassword(e.target.value);
                         validator.current.showMessageFor("Password");
                       }}
-                      />
+                    />
                   </li>
                   {validator.current.message(
                     "Password",
                     password,
                     "required|min:5"
-                    )}
+                  )}
                 </ul>
-                <div className={`${style.formItem} ${style.btnLogin}` }>
+                <div className={`${style.formItem} ${style.btnLogin}`}>
                   <p>Forgot Your password ?</p>
                   <button>LOGIN</button>
                 </div>

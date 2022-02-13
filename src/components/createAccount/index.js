@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AddressBar from "../../commen/addressbar";
 import Footer from "../../commen/footer";
@@ -45,7 +45,7 @@ const CreateAccount = () => {
                 Welcome, please enter the following details to continue. If you
                 have previously registered with us,{" "}
                 <span>
-                  <Link to="/">click here</Link>
+                  <Link to="">click here</Link>
                 </span>
               </p>
               <div className={style.inputs}>
@@ -227,7 +227,7 @@ const CreateAccount = () => {
                   <p>
                     By clicking this button, you are agree to my{" "}
                     <span>
-                      <Link to="/"> Policy Terms and Conditions.</Link>
+                      <Link to=""> Policy Terms and Conditions.</Link>
                     </span>{" "}
                   </p>
                 </div>

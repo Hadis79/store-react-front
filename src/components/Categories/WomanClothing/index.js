@@ -72,7 +72,6 @@ const WomanClothing = ({
             <div className={style.row}>
               {!loading ? (
                 data.map((item) => {
-                  // console.log(item.title.slice(0, 2));
                   return (
                     <div className={style.innerColumn}>
                       <div className={style.card}>

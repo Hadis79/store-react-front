@@ -7,7 +7,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Spinner from "../../../utils/loader";
 import style from "../category.module.css";
-import { useState } from "react";
 const Jewelery = ({
   data,
   totalData,
@@ -19,7 +18,6 @@ const Jewelery = ({
   setCart,
   cart
 }) => {
-  const [totalPrice, setTotalPrice] = useState(0);
   const params = useLocation();
   const currentRout = params.pathname.split("/")[1];
   console.log(data);

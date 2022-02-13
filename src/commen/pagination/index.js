@@ -30,9 +30,7 @@ const Pagination = ({
               <div className={style.pagination}>
                 {" "}
                 <span
-                  className={`${style.pageNum} ${
-                    page === currentPage ? `${style.active}` : null
-                  }`}
+                  className={`${style.pageNum} ${page === currentPage ? style.active: null}`}
                   onClick={() => onChangePage(page)}
                 >
                   {page}

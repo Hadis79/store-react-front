@@ -6,7 +6,6 @@ import HomeBanner from "./homeBanner";
 import LatestProducts from "./LatestProducts";
 import { useEffect, useState } from "react";
 import Spinner from "../../utils/loader";
-import ModalCart from "../../utils/modal";
 
 const HomePage = ({ data, loading ,setShowModal,cart,setCart}) => {
   const [latestProducts, setLatestProducts] = useState([]);
@@ -16,8 +15,8 @@ const HomePage = ({ data, loading ,setShowModal,cart,setCart}) => {
     const threeLastProduct = data.slice(17, 20);
     setLatestProducts(threeLastProduct);
     //most popular
-    const popular = data.slice(0, 5);
-    setPopular(popular);
+    const slice = data.slice(0, 5);
+    setPopular(slice);
   }, [data]);
   console.log(latestProducts);
   return (

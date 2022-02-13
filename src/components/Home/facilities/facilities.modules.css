@@ -50,6 +50,9 @@
 }
 
 @media screen and (max-width: 650px) {
+    .main-content {
+        border-radius: 5px;
+    }
     .facilities-container {
         display: flex;
         flex-direction: column;

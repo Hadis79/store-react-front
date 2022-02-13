@@ -1,12 +1,6 @@
-import Electronics from "../components/Categories/Electronics";
-import Jewelery from "../components/Categories/Jewelery";
-import MenClothing from "../components/Categories/MenClothing";
-import WomanClothing from "../components/Categories/WomanClothing";
-import CreateAccount from "../components/createAccount";
-import Login from "../components/login";
+
 import "../style.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AllProducts from "./AllProducts";
 import UserContext from "../context/userContext";
 import { ToastContainer } from "react-toastify";
 import { allroutes } from "./routes";
