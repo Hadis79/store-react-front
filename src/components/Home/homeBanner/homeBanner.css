@@ -152,7 +152,7 @@
      
      @media(max-width:640px) {
          .banner img {
-             min-height: 50vh;
+             min-height: 60vh;
              min-width: 100%;
              object-fit: cover;
          }
@@ -161,7 +161,7 @@
          }
          .banner-rigth-side {
              position: absolute;
-             top: 10%;
+             top: 0%;
              left: 38%;
              display: flex;
              font-size: .5rem !important;

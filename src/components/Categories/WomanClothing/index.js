@@ -80,6 +80,8 @@ const WomanClothing = ({
                             effect="blur"
                             src={item.image}
                             alt="image-products"
+                             width={'50%'}
+                             height={'50%'}
                           />
                         </div>
                         <div className={style.bodyHeader}>

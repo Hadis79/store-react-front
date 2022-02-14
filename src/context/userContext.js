@@ -8,17 +8,29 @@ import { errorToast, successToast } from "../utils/toast";
 import { toast } from 'react-toastify';
 
 const UserContext = ({ children }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
-  const [number, setNumber] = useState(null);
-  const [userName, setUserName] = useState(null);
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState();
+  // const [password, setPassword] = useState(null);
+  // const [confirmPassword, setConfirmPassword] = useState(null);
+  // const [number, setNumber] = useState(null);
+  // const [userName, setUserName] = useState(null);
   const [, forceUpdate] = useState();
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [street, setStreet] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [city, setCity] = useState("");
+  // const [street, setStreet] = useState("");
+  const [info,setInfo]=useState({
+    firstName:null,
+    lastName:null,
+    email:null,
+    password:null,
+    confirmPassword:null,
+    number:null,
+    userName:null,
+    address:null,
+    city:null,
+    street:null
+  })
   const navigate = useNavigate();
   const validator = useRef(
     new SimpleReactValidator({
@@ -35,8 +47,8 @@ const UserContext = ({ children }) => {
     console.log("form submitted");
     e.preventDefault();
     const user = {
-      username: userName,
-      password,
+      username: info.userName,
+      password:info.password,
     };
     console.log(JSON.stringify(user));
     try {
@@ -53,7 +65,7 @@ const UserContext = ({ children }) => {
       }
     } catch (error) {
       console.log(error);
-      errorToast("youshuld craete account");
+      errorToast("you should craete account");
       navigate("/createaccount");
     }
   };
@@ -71,16 +83,16 @@ const UserContext = ({ children }) => {
     e.preventDefault();
     const user = {
       name: {
-        firstName,
-        lastName,
+        firstName:info.firstName,
+        lastName:info.lastName,
       },
-      email,
-      password,
-      number,
-      userName,
+      email:info.email,
+      password:info.password,
+      number:info.number,
+      userName:info.userName,
       address: {
-        city,
-        street,
+        city:info.city,
+        street:info.street,
         number: 3,
         zipcode: "12926-3874",
         geolocation: {
@@ -89,12 +101,12 @@ const UserContext = ({ children }) => {
         },
       },
     };
-   
+   console.log(user);
     try {
       if (validator.current.allValid()) {
         const { status } = await registerUserApi(user);
         if (status === 200) {
-          toast.success("you'r registered were successFully...")
+          toast.success("Your registration was successful ...          ")
           navigate('/login')
         }
       } else {
@@ -110,30 +122,13 @@ toast.error('something went wrong...')
   return (
     <InitContext.Provider
       value={{
-        firstName,
-        setFirstName,
-        lastName,
-        setLastName,
-        email,
-        setEmail,
-        password,
-        setPassword,
-        confirmPassword,
-        setConfirmPassword,
-        userName,
-        setUserName,
-        number,
-        address,
-        setAddress,
-        setNumber,
+       
 
         registerHandler,
         logInHandler,
         validator,
-        city,
-        setCity,
-        street,
-        setStreet,
+        info,
+        setInfo
       }}
     >
       {children}

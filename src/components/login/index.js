@@ -11,13 +11,11 @@ import AddressBar from "../../commen/addressbar";
 const Login = () => {
   const loginContext = useContext(InitContext);
   const {
-    userName,
-    setUserName,
-    password,
-    setPassword,
+    info,setInfo,
     validator,
     logInHandler,
   } = loginContext;
+  console.log(info);
   const params = useLocation();
   const currentRoute = params.pathname.split("/")[1];
   return (
@@ -61,14 +59,14 @@ const Login = () => {
                     <input
                       type="text"
                       name="userName"
-                      value={userName}
+                      value={info.userName}
                       onChange={(e) => {
-                        setUserName(e.target.value);
+                        setInfo({...info,userName:e.target.value});
                         validator.current.showMessageFor("userName");
                       }}
                     />
                   </li>
-                  {validator.current.message("userName", userName, "required")}
+                  {validator.current.message("userName", info.userName, "required")}
                 </ul>
                 <ul className={style.formItem}>
                   <li>
@@ -78,16 +76,16 @@ const Login = () => {
                     <input
                       type="password"
                       name="Password"
-                      value={password}
+                      value={info.password}
                       onChange={(e) => {
-                        setPassword(e.target.value);
+                        setInfo({...info,password:e.target.value});
                         validator.current.showMessageFor("Password");
                       }}
                     />
                   </li>
                   {validator.current.message(
                     "Password",
-                    password,
+                    info.password,
                     "required|min:5"
                   )}
                 </ul>

@@ -8,26 +8,11 @@ import style from "./createAccount.module.css";
 const CreateAccount = () => {
   const registerContext = useContext(InitContext);
   const {
-    firstName,
-    setFirstName,
-    lastName,
-    setLastName,
-    email,
-    setEmail,
-    userName,
-    setUserName,
-    password,
-    setPassword,
-    confirmPassword,
-    setConfirmPassword,
-    city,
-    setCity,
-    street,setStreet,
-    number,
-    setNumber,
+   
     registerHandler,
     validator,
-   
+   info,
+   setInfo
   } = registerContext;
   const params=useLocation()
   const currentPage=params.pathname.split('/')[1]
@@ -57,16 +42,16 @@ const CreateAccount = () => {
                     <input
                       type="text"
                       name="firstName"
-                      value={firstName}
+                      value={info.firstName}
                       onChange={(e) => {
-                        setFirstName(e.target.value);
+                        setInfo({...info,firstName:e.target.value});
                         validator.current.showMessageFor("firstName");
                       }}
                     />
                   </li>
                   {validator.current.message(
                     "firstName",
-                    firstName,
+                    info.firstName,
                     "required"
                   )}
                 </ul>
@@ -78,14 +63,14 @@ const CreateAccount = () => {
                     <input
                       type="text"
                       name="lastName"
-                      value={lastName}
+                      value={info.lastName}
                       onChange={(e) => {
-                        setLastName(e.target.value);
+                        setInfo({...info,lastName:e.target.value});
                         validator.current.showMessageFor("lastName");
                       }}
                     />
                   </li>
-                  {validator.current.message("lastName", lastName, "required")}
+                  {validator.current.message("lastName", info.lastName, "required")}
                 </ul>
 
                 <ul className={style.formItem}>
@@ -96,14 +81,14 @@ const CreateAccount = () => {
                     <input
                       type="email"
                       name="email"
-                      value={email}
+                      value={info.email}
                       onChange={(e) => {
-                        setEmail(e.target.value);
+                        setInfo({...info,email:e.target.value});
                         validator.current.showMessageFor("email");
                       }}
                     />
                   </li>
-                  {validator.current.message("email", email, "required|email")}
+                  {validator.current.message("email", info.email, "required|email")}
                 </ul>
                 <ul className={style.formItem}>
                   <li>
@@ -113,16 +98,16 @@ const CreateAccount = () => {
                     <input
                       type="text"
                       name="userName"
-                      value={userName}
+                      value={info.userName}
                       onChange={(e) => {
-                        setUserName(e.target.value);
+                        setInfo({...info,userName:e.target.value});
                         validator.current.showMessageFor("username");
                       }}
                     />
                   </li>
                   {validator.current.message(
                     "userName",
-                    userName,
+                    info.userName,
                     "required|min:5"
                   )}
                 </ul>
@@ -134,16 +119,16 @@ const CreateAccount = () => {
                     <input
                       type="password"
                       name="Password"
-                      value={password}
+                      value={info.password}
                       onChange={(e) => {
-                        setPassword(e.target.value);
+                        setInfo({...info,password:e.target.value});
                         validator.current.showMessageFor("Password");
                       }}
                     />
                   </li>
                   {validator.current.message(
                     "Password",
-                    password,
+                    info.password,
                     "required|min:5"
                   )}
                 </ul>
@@ -155,16 +140,16 @@ const CreateAccount = () => {
                     <input
                       type="password"
                       name="Confirmpassword"
-                      value={confirmPassword}
+                      value={info.confirmPassword}
                       onChange={(e) => {
-                        setConfirmPassword(e.target.value);
+                        setInfo({...info,confirmPassword:e.target.value});
                         validator.current.showMessageFor("Confirmpassword");
                       }}
                     />
                   </li>
                   {validator.current.message(
                     "Confirmpassword",
-                    confirmPassword,
+                    info.confirmPassword,
                     "required|min:5"
                   )}
                 </ul>
@@ -176,14 +161,14 @@ const CreateAccount = () => {
                     <input
                       type="text"
                       name="city"
-                      value={city}
+                      value={info.city}
                       onChange={(e) => {
-                        setCity(e.target.value);
+                        setInfo({...info,city:e.target.value});
                         validator.current.showMessageFor("city");
                       }}
                     />
                   </li>
-                  {validator.current.message("city", city, "required")}
+                  {validator.current.message("city", info.city, "required")}
                 </ul>
                 <ul className={style.formItem}>
                   <li>
@@ -193,14 +178,14 @@ const CreateAccount = () => {
                     <input
                       type="text"
                       name="street"
-                      value={street}
+                      value={info.street}
                       onChange={(e) => {
-                        setStreet(e.target.value);
+                        setInfo({...info,street:e.target.value});
                         validator.current.showMessageFor("street");
                       }}
                     />
                   </li>
-                  {validator.current.message("street", street, "required")}
+                  {validator.current.message("street", info.street, "required")}
                 </ul>
                
                 <ul className={style.formItem}>
@@ -211,14 +196,14 @@ const CreateAccount = () => {
                     <input
                       type="number"
                       name="number"
-                      value={number}
+                      value={info.number}
                       onChange={(e) => {
-                        setNumber(e.target.value);
+                        setInfo({...info,number:e.target.value});
                         validator.current.showMessageFor("number");
                       }}
                     />
                   </li>
-                  {validator.current.message("number", number, "required")}
+                  {validator.current.message("number", info.number, "required")}
                 </ul>
                 <ul className={`${style.formItem} ${style.btnCreateAccount}`}>
                   <button>REGISTER NOW</button>

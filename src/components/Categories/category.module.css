@@ -150,4 +150,10 @@ container .column2 {
         /* height: calc(100vh - 78%); */
         margin-bottom: 18%;
     }
+    .spinner {
+        position: absolute;
+        top: 62%;
+        left: 42%;
+        margin: 0px auto;
+    }
 }
