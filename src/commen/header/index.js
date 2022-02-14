@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-import { Link} from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
 import style from "./header.module.css";
 const Header = ({setShowModal}) => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -8,6 +8,8 @@ const Header = ({setShowModal}) => {
 const modalHandler=()=>{
   setShowModal(true)
 }
+const location=useLocation()
+console.log(location.pathname.split('/'));
   return (
     <div className={style.container}>
       <div className={style.topHeader}>
@@ -24,11 +26,11 @@ const modalHandler=()=>{
           </div>
         </div>
         
-        <div className={style.rightSide}>
+       {location.pathname.split('/')[1]==='createaccount'|| location.pathname.split('/')[1]==='login'?'': <div className={style.rightSide}>
           <div onClick={modalHandler} className={style.cart}>
             <i class="fa fa-shopping-cart"></i> Your Cart
           </div>
-        </div>
+        </div>}
       </div>
       <nav className={style.mainHeader}>
         <div className={style.navbar}>

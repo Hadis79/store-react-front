@@ -89,17 +89,7 @@ const UserContext = ({ children }) => {
         },
       },
     };
-    const resetuser = () => {
-      setFirstName("");
-      setLastName("");
-      setUserName("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
-      setNumber("");
-      setCity("");
-      setStreet("");
-    };
+   
     try {
       if (validator.current.allValid()) {
         const { status } = await registerUserApi(user);
