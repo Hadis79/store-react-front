@@ -8,17 +8,7 @@ import { errorToast, successToast } from "../utils/toast";
 import { toast } from 'react-toastify';
 
 const UserContext = ({ children }) => {
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [email, setEmail] = useState();
-  // const [password, setPassword] = useState(null);
-  // const [confirmPassword, setConfirmPassword] = useState(null);
-  // const [number, setNumber] = useState(null);
-  // const [userName, setUserName] = useState(null);
-  const [, forceUpdate] = useState();
-  // const [address, setAddress] = useState("");
-  // const [city, setCity] = useState("");
-  // const [street, setStreet] = useState("");
+  
   const [info,setInfo]=useState({
     firstName:null,
     lastName:null,
@@ -31,6 +21,7 @@ const UserContext = ({ children }) => {
     city:null,
     street:null
   })
+  const [, forceUpdate] = useState();
   const navigate = useNavigate();
   const validator = useRef(
     new SimpleReactValidator({

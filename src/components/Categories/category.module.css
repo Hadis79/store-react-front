@@ -129,9 +129,6 @@ container .column2 {
     .imgContainer .row {
         grid-template-columns: repeat(2, 1fr);
     }
-    container .column1 {
-        /* height: calc(100vh - 56%); */
-    }
     .image img {
         width: 150px;
         height: 200px;
