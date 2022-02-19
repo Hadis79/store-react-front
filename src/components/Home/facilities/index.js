@@ -10,14 +10,14 @@ const Facilities = () => {
           <h2>follow us:</h2>
           <span>
             <Link to="/">
-              <i class="fa fa-twitter"></i>
+              <i className="fa fa-twitter"></i>
             </Link>
           </span>
           <span>
             <span>
               <Link to="/">
                 {" "}
-                <i class="fa fa-facebook-f"></i>
+                <i className="fa fa-facebook-f"></i>
               </Link>
             </span>
           </span>
@@ -25,7 +25,7 @@ const Facilities = () => {
         <div className="border-right"></div>
         <div className="shipping">
           <span>
-            <i class="fa fa-truck"></i>
+            <i className="fa fa-truck"></i>
           </span>
           <div>
             <h2>Free Shipping</h2>

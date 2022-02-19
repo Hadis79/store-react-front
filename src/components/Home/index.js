@@ -6,6 +6,7 @@ import HomeBanner from "./homeBanner";
 import LatestProducts from "./LatestProducts";
 import { useEffect, useState } from "react";
 import Spinner from "../../utils/loader";
+import { Helmet } from 'react-helmet';
 
 const HomePage = ({ data, loading ,setShowModal,cart,setCart}) => {
   const [latestProducts, setLatestProducts] = useState([]);
@@ -21,6 +22,8 @@ const HomePage = ({ data, loading ,setShowModal,cart,setCart}) => {
   console.log(latestProducts);
   return (
     <>
+    <Helmet><title>Home</title></Helmet>
+
       <Header setShowModal={setShowModal} cart={cart} setCart={setCart}/>
       <HomeBanner />
       <Facilities />

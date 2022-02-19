@@ -1,3 +1,6 @@
+
+
+
 import { Link, useLocation } from "react-router-dom";
 import AddressBar from "../../../commen/addressbar";
 import Footer from "../../../commen/footer";
@@ -8,8 +11,9 @@ import style from "../category.module.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Spinner from "../../../utils/loader";
+import { Helmet } from 'react-helmet';
 
-const WomanClothing = ({
+const Products = ({
   data,
   totalData,
   perPage,
@@ -33,6 +37,8 @@ const WomanClothing = ({
   };
   return (
     <>
+    <Helmet><title>{params.pathname.split("/")[1]}</title></Helmet>
+
       <Header setShowModal={setShowModal} cart={cart} setCart={setCart}/>
       <container>
         <div className={style.column1}>
@@ -121,4 +127,4 @@ const WomanClothing = ({
   );
 };
 
-export default WomanClothing;
+export default Products;

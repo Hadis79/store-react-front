@@ -16,25 +16,25 @@ console.log(location.pathname.split('/'));
         <div className={style.leftSide}>
           <div className={style.login}>
             <Link to="/login">
-              <i class="fa fa-user"></i> logIn
+              <i className="fa fa-user"></i> logIn
             </Link>
           </div>
           <div className={style.createAccount}>
             <Link to="/createaccount">
-              <i class="fa fa-lock"></i> create an account
+              <i className="fa fa-lock"></i> create an account
             </Link>
           </div>
         </div>
         
        {location.pathname.split('/')[1]==='createaccount'|| location.pathname.split('/')[1]==='login'?'': <div className={style.rightSide}>
           <div onClick={modalHandler} className={style.cart}>
-            <i class="fa fa-shopping-cart"></i> Your Cart
+            <i className="fa fa-shopping-cart"></i> Your Cart
           </div>
         </div>}
       </div>
       <nav className={style.mainHeader}>
         <div className={style.navbar}>
-          <div class={style.logo}>
+          <div className={style.logo}>
             <h1>
               <span>E</span> -Shop
             </h1>

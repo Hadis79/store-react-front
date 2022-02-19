@@ -20,7 +20,7 @@ const LatestProducts = ({ lastData }) => {
                 <div className={style.titleProduct}>
                 <p>{data.title}</p>
                 </div>
-                <p className={style.price}> <i class="fa fa-shopping-cart"></i> {`$${data.price}`}</p>
+                <p className={style.price}> <i className="fa fa-shopping-cart"></i> {`$${data.price}`}</p>
               </div>
             </div>
           );

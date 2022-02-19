@@ -5,6 +5,7 @@ import Footer from "../../commen/footer";
 import Header from "../../commen/header";
 import { InitContext } from "../../context/InitContext";
 import style from "./createAccount.module.css";
+import { Helmet } from 'react-helmet';
 const CreateAccount = () => {
   const registerContext = useContext(InitContext);
   const {
@@ -18,6 +19,8 @@ const CreateAccount = () => {
   const currentPage=params.pathname.split('/')[1]
   return (
     <>
+    <Helmet><title>Register</title></Helmet>
+
       <div className={style.createaccountContainer}>
         <Header />
        <AddressBar currentPage={currentPage}/>

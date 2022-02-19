@@ -1,21 +1,17 @@
 import { useCallback, useEffect } from "react";
 import { useState } from "react/cjs/react.development";
-import Electronics from "../../components/Categories/Electronics";
-import Jewelery from "../../components/Categories/Jewelery";
-import MenClothing from "../../components/Categories/MenClothing";
-import WomanClothing from "../../components/Categories/WomanClothing";
+import Products from "../../components/Categories/Products";
 import { getProductsCategoryApi } from "../../services/products";
 import { paginate } from "../../utils/paginate";
-const CategoryProducts = ({ baseName, api ,setShowModal,cart,setCart}) => {
+const CategoryProducts = ({ baseName, api, setShowModal, cart, setCart }) => {
   console.log(api);
   const [newData, setNewData] = useState([]);
   const [loading, setLoading] = useState(false);
- 
+
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage] = useState(3);
-  const getCategoryInData =useCallback(async()=>{
-
+  const getCategoryInData = useCallback(async () => {
     try {
       setLoading(true);
       const data = await getProductsCategoryApi({ api });
@@ -27,10 +23,10 @@ const CategoryProducts = ({ baseName, api ,setShowModal,cart,setCart}) => {
 
       console.log(err);
     }
-  },[api]) 
+  }, [api]);
   useEffect(() => {
     getCategoryInData();
-  }, [baseName,getCategoryInData]);
+  }, [baseName, getCategoryInData]);
   //pagination
   const onChangePage = (page) => {
     setCurrentPage(page);
@@ -51,17 +47,12 @@ const CategoryProducts = ({ baseName, api ,setShowModal,cart,setCart}) => {
     setCart,
     cart,
   };
-  console.log("cart", cart);
-  const component = {
-    jewelery: <Jewelery {...allproducts} />,
-    men: <MenClothing {...allproducts} />,
-    electronics: <Electronics {...allproducts} />,
-    woman:<WomanClothing {...allproducts} /> ,
-  };
+  console.log("data", newData);
+
   console.log(baseName);
   return (
     <>
-      {component[baseName]}
+      <Products {...allproducts} />
     </>
   );
 };

@@ -52,7 +52,7 @@ const SimpleSlider = ({ data }) => {
             <div key={item.id} className="slider-container">
               <img src={item.image} alt="slider pic" />
               <p>
-                <i class="fa fa-shopping-cart"></i> {`$${item.price}`}
+                <i className="fa fa-shopping-cart"></i> {`$${item.price}`}
               </p>
             </div>
           );

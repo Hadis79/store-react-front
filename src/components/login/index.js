@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { InitContext } from "../../context/InitContext";
 import style from "./login.module.css";
 import AddressBar from "../../commen/addressbar";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const loginContext = useContext(InitContext);
   const {
@@ -19,6 +20,7 @@ const Login = () => {
   const currentRoute = params.pathname.split("/")[1];
   return (
     <>
+    <Helmet><title>login</title></Helmet>
       <div className={style.loginContainer}>
         <Header />
         <AddressBar currentPage={currentRoute} />
