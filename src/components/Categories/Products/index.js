@@ -79,7 +79,7 @@ const Products = ({
               {!loading ? (
                 data.map((item) => {
                   return (
-                    <div className={style.innerColumn}>
+                    <div key={item.id} className={style.innerColumn}>
                       <div className={style.card}>
                         <div className={style.image}>
                           <LazyLoadImage
@@ -113,13 +113,13 @@ const Products = ({
               )}
             </div>
           </div>
-          <Pagination
+         {!loading&& <Pagination
             totalData={totalData.length}
             currentPage={currentPage}
             perPage={perPage}
             onChangePage={onChangePage}
             setCurrentPage={setCurrentPage}
-          />
+          />}
         </div>
       </container>
       <Footer />
